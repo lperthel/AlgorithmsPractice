@@ -77,30 +77,26 @@ final int 		actualProduct = maxProductSubArray  .findMaxProductWithinArrayBounds
 		assertEquals(expectedProduct,actualProduct);		
 
 	}
-
-}	
-/*
-
+	@Test
+	public void testGivenArrayWithSingleZeroAndLargestPrefixProductExpectPrefixProduct() {
+		final int[] arrayWithSingleZero = {2 ,3,  0, -1};
+		final 		int expectedProduct = 6;
 		
-		@Test
-		public void testGivenArrayWithSingleZeroAndLargestPrefixProductExpectPrefixProduct() {
-			final int[] arrayWithSingleZero = {2 ,3,  0, -1};
-			final 		int expectedProduct = 6;
-			int actualProduct;
-			actualProduct = maxProductSubarray .findLargestProductInArray(arrayWithSingleZero );
-			assertEquals(expectedProduct,actualProduct);		
+		final int 		actualProduct = maxProductSubArray  .findMaxProductWithinArrayBounds(0,arrayWithSingleZero .length,arrayWithSingleZero );
+		assertEquals(expectedProduct,actualProduct);		
 
-	}
-
+}
 		@Test
 		public void testGivenArrayWithSingleZeroAndLargestSuffixProductExpectSuffixProduct() {		
 			final int[] arrayWithSingleZeroAndLargestSuffix = {-1, 0, 2, 3};
 			final 		int expectedProduct = 6;
-			int actualProduct;
-			actualProduct = maxProductSubarray .findLargestProductInArray(arrayWithSingleZeroAndLargestSuffix );
+			
+			final int 		actualProduct = maxProductSubArray  .findMaxProductWithinArrayBounds(0,arrayWithSingleZeroAndLargestSuffix .length,arrayWithSingleZeroAndLargestSuffix );
 			assertEquals(expectedProduct,actualProduct);		
-
 	}
+
+}	
+/*				
 
 		@Test
 		public void testArrayWithZeroAsLargestElement() {
