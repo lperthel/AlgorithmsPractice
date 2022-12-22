@@ -60,31 +60,28 @@ final int 		actualProduct = maxProductSubArray  .findMaxProductWithinArrayBounds
 
 
 	}
+	@Test
+	public void testGivenArrayWithPrefixAsLargestProductExpectProdctOfPrefix() {
+		final int[] arrayWithLargestPrefixProduct = {2, 3, -2, 4};
+final 		int expectedProduct = 6;
+final int 		actualProduct = maxProductSubArray  .findMaxProductWithinArrayBounds(0,arrayWithLargestPrefixProduct.length,arrayWithLargestPrefixProduct);
+		assertEquals(expectedProduct,actualProduct);		
+	}
+	
+	@Test
+	public void testGivenArrayWithSuffixAsLargestProductExpectSuffixProduct(){
+		final int[] arrayWithSuffixAsLargestProduct= {4,-2, 3, 2};
+		final 		int expectedProduct = 6;
+	
+		final int 		actualProduct = maxProductSubArray  .findMaxProductWithinArrayBounds(0,arrayWithSuffixAsLargestProduct.length,arrayWithSuffixAsLargestProduct);
+		assertEquals(expectedProduct,actualProduct);		
+
+	}
 
 }	
 /*
 
-		@Test
-		public void testGivenArrayWithPrefixAsLargestProductExpectProdctOfPrefix() {
-			final int[] arrayWithLargestPrefixProduct = {2, 3, -2, 4};
-	final 		int expectedProduct = 6;
-			int actualProduct;
-
-
-			actualProduct = maxProductSubarray .findLargestProductInArray(arrayWithLargestPrefixProduct);
-			assertEquals(expectedProduct,actualProduct);		
-		}
-
-		@Test
-		public void testGivenArrayWithSuffixAsLargestProductExpectSuffixProduct(){
-			final int[] arrayWithSuffixAsLargestProduct= {4,-2, 3, 2};
-			final 		int expectedProduct = 6;
-			int actualProduct;
-			actualProduct = maxProductSubarray .findLargestProductInArray(arrayWithSuffixAsLargestProduct);
-			assertEquals(expectedProduct,actualProduct);		
-
-		}
-
+		
 		@Test
 		public void testGivenArrayWithSingleZeroAndLargestPrefixProductExpectPrefixProduct() {
 			final int[] arrayWithSingleZero = {2 ,3,  0, -1};
