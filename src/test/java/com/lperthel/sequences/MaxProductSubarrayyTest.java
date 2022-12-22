@@ -94,18 +94,13 @@ final int 		actualProduct = maxProductSubArray  .findMaxProductWithinArrayBounds
 			final int 		actualProduct = maxProductSubArray  .findMaxProductWithinArrayBounds(0,arrayWithSingleZeroAndLargestSuffix .length,arrayWithSingleZeroAndLargestSuffix );
 			assertEquals(expectedProduct,actualProduct);		
 	}
-
-}	
-/*				
-
-		@Test
+@Test
 		public void testArrayWithZeroAsLargestElement() {
 			final int[] arrayWithZeroAsLargestNumber= {-2, 0, -1};
-			final 		int expectedProduct = 0;
-			int actualProduct;
-			actualProduct = maxProductSubarray .findLargestProductInArray(arrayWithZeroAsLargestNumber);
+			final 		int expectedProduct = 0;		
+			final int 		actualProduct = maxProductSubArray  .findMaxProductWithinArrayBounds(0,arrayWithZeroAsLargestNumber.LENGTH,arrayWithZeroAsLargestNumber);
 			assertEquals(expectedProduct,actualProduct);		
 
-
 	}				
- */
+
+}	
