@@ -46,24 +46,23 @@ public class MaxProductSubarrayyTest {
 	public void testGivenArrayWithEvenAmountOfNegativeNumbersExpectProductOfArray() {
 		final int[] arrayWithEvenNumberOfNegativeNymbers = {-2, -3, -2, -4};
 		final 		int expectedProduct = 48;
-		int actualProduct;
-		actualProduct = maxProductSubArray  .findMaxProductWithinArrayBounds(0,arrayWithEvenNumberOfNegativeNymbers.length,arrayWithEvenNumberOfNegativeNymbers  );
+final int 		actualProduct = maxProductSubArray  .findMaxProductWithinArrayBounds(0,arrayWithEvenNumberOfNegativeNymbers.length,arrayWithEvenNumberOfNegativeNymbers  );
 		assertEquals(expectedProduct,actualProduct);		
 	}
-}	
-/*
-	@Test
 	@Test
 	public void testGivenArrayWithNoNegativeNumbersReturnProdctOfArray() {
 
 		final int[] arrayWithNoNegativeNumbers= {4,2, 3, 2};
 		final 		int expectedProduct = 48;
-		int actualProduct;
-		actualProduct = maxProductSubarray .findLargestProductInArray(arrayWithNoNegativeNumbers);
+		
+final int 		actualProduct = maxProductSubArray  .findMaxProductWithinArrayBounds(0,arrayWithNoNegativeNumbers.length,arrayWithNoNegativeNumbers);
 		assertEquals(expectedProduct,actualProduct);		
 
 
 	}
+
+}	
+/*
 
 		@Test
 		public void testGivenArrayWithPrefixAsLargestProductExpectProdctOfPrefix() {
