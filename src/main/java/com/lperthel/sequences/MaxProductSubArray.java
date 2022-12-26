@@ -11,7 +11,11 @@ int endIndex;
 int maxProduct = Integer.MIN_VALUE;
 int subArrayProduct;
 boolean arrayHasZeroAsAnElement = false;
-while(startIndex < nums.length){
+if(nums.length ==1) {
+	return nums[0];
+}
+
+	while(startIndex < nums.length){
 endIndex =getIndexOfNextZeroOrEndOfArray(startIndex, nums);
 System.out.printf("endIndex = %d%n",endIndex);
 if(endIndex < nums.length) {
