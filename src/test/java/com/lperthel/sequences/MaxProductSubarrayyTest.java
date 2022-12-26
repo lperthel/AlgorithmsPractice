@@ -36,10 +36,15 @@ public class MaxProductSubarrayyTest {
 	@Test
 	public void testGivenSingleElementArrayExpectSingleElement() {
 		final int[] singleElementArray = {2};
-		final 		int expectedProduct = 2;
+		final int[] singleZeroElementArray = {0};
+		int expectedProduct = 2;
 		int actualProduct;
 		actualProduct = maxProductSubArray  .findMaxProductWithinArray(singleElementArray );
+		assertEquals(expectedProduct,actualProduct);
+		expectedProduct = 0;
+		actualProduct = maxProductSubArray  .findMaxProductWithinArray(singleZeroElementArray );
 		assertEquals(expectedProduct,actualProduct);		
+
 	}
 
 	
@@ -97,7 +102,7 @@ final int 		actualProduct = maxProductSubArray  .findMaxProductWithinArray(array
 		public void testArrayWithZeroAsLargestElement() {
 			final int[] arrayWithZeroAsLargestNumber= {-2, 0, -1};
 			final 		int expectedProduct = 0;		
-			final int 		actualProduct = maxProductSubArray  .findMaxProductWithinArrayBounds(0,arrayWithZeroAsLargestNumber.length,arrayWithZeroAsLargestNumber);
+			final int 		actualProduct = maxProductSubArray  .findMaxProductWithinArray(arrayWithZeroAsLargestNumber);
 			assertEquals(expectedProduct,actualProduct);
 	}					
 }	
