@@ -8,7 +8,7 @@ public final class MaxProductSubArray {
 	
 int startIndex = 0;
 int endIndex; 
-int maxProduct = Integer.MAX_VALUE;
+int maxProduct = Integer.MIN_VALUE;
 int subArrayProduct;
 while(startIndex < nums.length){
 endIndex =getIndexOfNextZeroOrEndOfArray(startIndex, nums);
