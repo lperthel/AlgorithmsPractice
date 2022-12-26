@@ -4,6 +4,23 @@ import java.util.Arrays;
 
 public final class MaxProductSubArray {
 
+	public int findMaxProductWithinArray(int[] nums) {
+	
+int startIndex = 0;
+int endIndex; 
+int maxProduct = Integer.MAX_VALUE;
+int subArrayProduct;
+while(startIndex < nums.length){
+endIndex =getIndexOfNextZeroOrEndOfArray(startIndex, nums);
+subArrayProduct = findMaxProductWithinArrayBounds(startIndex, endIndex, nums);
+ if(maxProduct < subArrayProduct) {
+	 maxProduct =subArrayProduct; 
+ }
+startIndex = endIndex +1;
+}
+return maxProduct;
+	}
+	
 	public int findMaxProductWithinArrayBounds(int startIndex, int endIndex, int[] nums) {
 		
 		int prefixProduct = 1;
