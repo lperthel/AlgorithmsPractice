@@ -10,13 +10,24 @@ int startIndex = 0;
 int endIndex; 
 int maxProduct = Integer.MIN_VALUE;
 int subArrayProduct;
+boolean arrayHasZeroAsAnElement = false;
 while(startIndex < nums.length){
 endIndex =getIndexOfNextZeroOrEndOfArray(startIndex, nums);
+System.out.printf("endIndex = %d%n",endIndex);
+if(endIndex < nums.length) {
+	System.out.println("arrayHasZeroAsAnElement = true");
+	arrayHasZeroAsAnElement = true;
+}
 subArrayProduct = findMaxProductWithinArrayBounds(startIndex, endIndex, nums);
  if(maxProduct < subArrayProduct) {
 	 maxProduct =subArrayProduct; 
  }
 startIndex = endIndex +1;
+}
+
+if(arrayHasZeroAsAnElement && maxProduct < 0) {
+	
+	maxProduct = 0;
 }
 return maxProduct;
 	}
