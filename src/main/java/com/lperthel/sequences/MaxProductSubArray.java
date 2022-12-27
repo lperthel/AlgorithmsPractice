@@ -26,15 +26,13 @@ subArrayProduct = findMaxProductWithinArrayBounds(startIndex, endIndex, nums);
 	 maxProduct =subArrayProduct; 
  }
  startIndex = endIndex +1;
- while(startIndex < nums.length && nums[startIndex] != 0) {
-	 startIndex++;
  }
-}
 
 if(arrayHasZeroAsAnElement && maxProduct < 0) {
 	
 	maxProduct = 0;
 }
+System.out.printf("exiting program with maxProduct = %d%n", maxProduct);
 return maxProduct;
 	}
 	
