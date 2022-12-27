@@ -19,14 +19,16 @@ if(nums.length ==1) {
 endIndex =getIndexOfNextZeroOrEndOfArray(startIndex, nums);
 System.out.printf("endIndex = %d%n",endIndex);
 if(endIndex < nums.length) {
-	System.out.println("arrayHasZeroAsAnElement = true");
 	arrayHasZeroAsAnElement = true;
 }
 subArrayProduct = findMaxProductWithinArrayBounds(startIndex, endIndex, nums);
  if(maxProduct < subArrayProduct) {
 	 maxProduct =subArrayProduct; 
  }
-startIndex = endIndex +1;
+ startIndex = endIndex +1;
+ while(startIndex < nums.length && nums[startIndex] != 0) {
+	 startIndex++;
+ }
 }
 
 if(arrayHasZeroAsAnElement && maxProduct < 0) {
