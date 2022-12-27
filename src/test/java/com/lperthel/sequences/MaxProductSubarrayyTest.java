@@ -96,6 +96,15 @@ final int 		actualProduct = maxProductSubArray  .findMaxProductWithinArray(array
 		actualProduct = maxProductSubArray  .findMaxProductWithinArray(arrayWithTripleZero );
 		assertEquals(expectedTripleZeroProduct ,actualProduct);		
 }
+@Test
+		public void testArrayWithZeroAsLargestElement() {
+			final int[] arrayWithZeroAsLargestNumber= {-2, 0, -1};
+			final 		int expectedProduct = 0;		
+			final int 		actualProduct = maxProductSubArray  .findMaxProductWithinArray(arrayWithZeroAsLargestNumber);
+			assertEquals(expectedProduct,actualProduct);
+			}
+	
+	
 		@Test
 		public void testGivenArrayWithSingleZeroGroupAndLargestSuffixProductExpectSuffixProduct() {		
 			final int[] arrayWithSingleZeroAndLargestSuffix = {2, -1, 0, 2, 3};
@@ -105,18 +114,32 @@ final int 		actualProduct = maxProductSubArray  .findMaxProductWithinArray(array
 			final 		int expectedDoubleZeroProduct = 8;
 			final 		int expectedTripleZeroProduct = 10;
 			int actualProduct;
-//actualProduct = maxProductSubArray  .findMaxProductWithinArray(arrayWithSingleZeroAndLargestSuffix );
-//			assertEquals(expectedSingleZeroProduct ,actualProduct);			
+actualProduct = maxProductSubArray  .findMaxProductWithinArray(arrayWithSingleZeroAndLargestSuffix );
+assertEquals(expectedSingleZeroProduct ,actualProduct);			
 			actualProduct = maxProductSubArray  .findMaxProductWithinArray(arrayWithDoubleZerosAndLargestSuffix );
 						assertEquals(expectedDoubleZeroProduct ,actualProduct);
 						actualProduct = maxProductSubArray  .findMaxProductWithinArray(arrayWithTripleZerosAndLargestSuffix );
 						assertEquals(expectedTripleZeroProduct ,actualProduct);
 	}
-@Test
-		public void testArrayWithZeroAsLargestElement() {
-			final int[] arrayWithZeroAsLargestNumber= {-2, 0, -1};
-			final 		int expectedProduct = 0;		
-			final int 		actualProduct = maxProductSubArray  .findMaxProductWithinArray(arrayWithZeroAsLargestNumber);
-			assertEquals(expectedProduct,actualProduct);
-	}					
+		@Test
+		public void testGivenArrayWithMultiZeroGroupAndLargestPrefixProductExpectPrefixProduct() {
+		final int[] arrayWithMultiZeroGroupsAndLargestPrefixProduct = {5, 4, 0, 2, -6, 0, 2, 4};
+			final 		int expectedProduct = 20;
+			int 		actualProduct = maxProductSubArray  .findMaxProductWithinArray(arrayWithMultiZeroGroupsAndLargestPrefixProduct );
+			assertEquals(expectedProduct ,actualProduct);
+		}
+		@Test
+		public void testGivenArrayWithMultiZeroGroupAndLargestMiddleProductExpectMiddleProduct() {
+		final int[] arrayWithMultiZeroGroupsAndLargestMiddleProduct = {2,-6,0,4,5,0, 2,4};
+			final 		int expectedProduct = 20;
+			int 		actualProduct = maxProductSubArray  .findMaxProductWithinArray(arrayWithMultiZeroGroupsAndLargestMiddleProduct );
+			assertEquals(expectedProduct ,actualProduct);
+		}
+		@Test
+		public void testGivenArrayWithMultiZeroGroupAndLargestSuffixProductExpectSuffixProduct() {
+		final int[] arrayWithMultiZeroGroupsAndLargestSuffixProduct = {2,4, 0, 2, -6, 0, 5,4};
+			final 		int expectedProduct = 20;
+			int 		actualProduct = maxProductSubArray  .findMaxProductWithinArray(arrayWithMultiZeroGroupsAndLargestSuffixProduct );
+			assertEquals(expectedProduct ,actualProduct);
+		}
 }	
