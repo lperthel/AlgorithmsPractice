@@ -2,9 +2,9 @@ package com.lperthel.sequences;
 
 import java.util.Arrays;
 
-public final class MaxProductSubArray {
+public final class Solution {
 
-	public int findMaxProductWithinArray(int[] nums) {
+	public int maxProduct(int[] nums) {
 	
 int startIndex = 0;
 int endIndex; 
@@ -17,7 +17,7 @@ if(nums.length ==1) {
 
 	while(startIndex < nums.length){
 endIndex =getIndexOfNextZeroOrEndOfArray(startIndex, nums);
-System.out.printf("endIndex = %d%n",endIndex);
+//System.out.printf("endIndex = %d%n",endIndex);
 if(endIndex < nums.length) {
 	arrayHasZeroAsAnElement = true;
 }
@@ -81,20 +81,20 @@ return maxProduct;
 public int getIndexOfNextZeroOrEndOfArray(int startIndex, int[] nums) {
 		
 		int indexOfNextZeroOrEndOfArray  = -1;
-		System.out.printf("running getIndexOfNextZeroOrEndOfArray: startIndex = %d, nums %s%n",startIndex ,Arrays.toString(nums));
+//		System.out.printf("running getIndexOfNextZeroOrEndOfArray: startIndex = %d, nums %s%n",startIndex ,Arrays.toString(nums));
 		int i = startIndex;
 		while(indexOfNextZeroOrEndOfArray == -1) {
 if(nums[i] ==0) {
 	indexOfNextZeroOrEndOfArray  = i;
-	System.out.printf("nums[%d] =0.indexOfNextZeroOrEndOfArray = %d%n", i, indexOfNextZeroOrEndOfArray  );
+//	System.out.printf("nums[%d] =0.indexOfNextZeroOrEndOfArray = %d%n", i, indexOfNextZeroOrEndOfArray  );
 }
 	else if(i+1 == nums.length) {
 		indexOfNextZeroOrEndOfArray = nums.length; 
-		System.out.printf("nums%di] =nums.length.indexOfNextZeroOrEndOfArray = %d%n",i,  indexOfNextZeroOrEndOfArray  );
+//		System.out.printf("nums%di] =nums.length.indexOfNextZeroOrEndOfArray = %d%n",i,  indexOfNextZeroOrEndOfArray  );
 	}
 i++;
 }
-		System.out.printf("renturning indexOfNextZeroOrEndOfArray   = %d%n", indexOfNextZeroOrEndOfArray  );
+//		System.out.printf("renturning indexOfNextZeroOrEndOfArray   = %d%n", indexOfNextZeroOrEndOfArray  );
 	return indexOfNextZeroOrEndOfArray ;
 	}
 
