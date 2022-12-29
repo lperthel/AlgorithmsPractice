@@ -98,7 +98,7 @@ final int 		actualProduct = maxProductSubArray  .maxProduct(arrayWithLargestPref
 }
 @Test
 		public void testArrayWithZeroAsLargestElement() {
-			final int[] arrayWithZeroAsLargestNumber= {-2, 0, -1};
+			final int[] arrayWithZeroAsLargestNumber= {0,-2,0};
 			final 		int expectedProduct = 0;		
 			final int 		actualProduct = maxProductSubArray  .maxProduct(arrayWithZeroAsLargestNumber);
 			assertEquals(expectedProduct,actualProduct);
