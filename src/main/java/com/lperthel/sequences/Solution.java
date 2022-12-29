@@ -14,7 +14,10 @@ boolean arrayHasZeroAsAnElement = false;
 if(nums.length ==1) {
 	return nums[0];
 }
-
+//startIndex = findFirstNonZeroIndex(nums);
+if(startIndex == nums.length) {
+	arrayHasZeroAsAnElement = true;
+}
 	while(startIndex < nums.length){
 endIndex =getIndexOfNextZeroOrEndOfArray(startIndex, nums);
 //System.out.printf("endIndex = %d%n",endIndex);
@@ -36,8 +39,22 @@ System.out.printf("exiting program with maxProduct = %d%n", maxProduct);
 return maxProduct;
 	}
 	
+	public int findFirstNonZeroIndex(int[] nums){
+		int firstNonZeroIndex;
+		for(firstNonZeroIndex = 0;firstNonZeroIndex < nums.length;firstNonZeroIndex++) {
+			 if(nums[firstNonZeroIndex] == 0){
+				 break;
+			 }
+		}
+		return firstNonZeroIndex;
+	}
 	public int findMaxProductWithinArrayBounds(int startIndex, int endIndex, int[] nums) {
-		
+		System.out.printf("startIndex = %d",startIndex);
+		System.out.printf("endIndex = %d%n",endIndex);
+		if(endIndex - startIndex ==1) {
+			System.out.printf("returning nums[%d] = %d%n",startIndex,nums[startIndex]);
+			return nums[startIndex];
+		}
 		int prefixProduct = 1;
 		int suffixProduct = 1;
 		int maxProduct;
