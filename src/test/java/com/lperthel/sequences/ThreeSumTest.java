@@ -1,20 +1,15 @@
 package com.lperthel.sequences;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
+
+import java.util.Arrays;
+import java.util.List;
 
 import org.junit.Test;
 
 public class ThreeSumTest {
 private Solution solution = new Solution();
-	@Test
-	public void testThreeSum() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testObject() {
-		fail("Not yet implemented");
-	}
 
 	@Test
 	public void testGetClass() {
