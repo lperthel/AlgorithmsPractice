@@ -17,6 +17,15 @@ expected = new ArrayList<>() ;
 actual = null;
 Solution.ThreeSumMatch.clearMatches();
 }
+@Test
+public void test_GivenMultiElementArray_ReturnResultsAs3SumList() {
+	int[] MultiElementArray = {-1,0,1,2,-1,-4};
+expected.add(Arrays.asList("-1","0","1"));
+expected.add(Arrays.asList("-1","-1","2"));
+actual = solution.threeSum(MultiElementArray );
+print(actual);
+assertEquals(expected,actual);
+}
 	@Test
 	public void test_Given3ElementArray_ReturnResultsAs3SumList() {
 		int[] ThreeElementArray = {-1, 0, 1};
