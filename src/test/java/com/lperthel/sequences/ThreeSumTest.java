@@ -1,69 +1,25 @@
 package com.lperthel.sequences;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class ThreeSumTest {
 private Solution solution = new Solution();
-
+private List<List<String>>expected ;
+@Before
+private void init() {	
+expected = new ArrayList<>() ;
+}
 	@Test
-	public void testGetClass() {
-		fail("Not yet implemented");
-	}
+	public void test_Given3ElementArray_ReturnResultsAs3SumList() {
+		int[] ThreeElementArray = {-1, 0, 1};
+expected.add(Arrays.asList("-1","0","1"));
 
-	@Test
-	public void testHashCode() {
-		fail("Not yet implemented");
 	}
-
-	@Test
-	public void testEquals() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testClone() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testToString() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testNotify() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testNotifyAll() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testWait() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testWaitLong() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testWaitLongInt() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testFinalize() {
-		fail("Not yet implemented");
-	}
-
 }
