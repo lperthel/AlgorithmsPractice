@@ -15,13 +15,14 @@ private List<List<String>>actual;
 public void init() {	
 expected = new ArrayList<>() ;
 actual = null;
+Solution.ThreeSumMatch.clearMatches();
 }
 	@Test
 	public void test_Given3ElementArray_ReturnResultsAs3SumList() {
 		int[] ThreeElementArray = {-1, 0, 1};
 expected.add(Arrays.asList("-1","0","1"));
 actual = solution.threeSum(ThreeElementArray );
-print(expected);
-assertEquals(expected,actual);c
+print(actual);
+assertEquals(expected,actual);
 	}
 }
