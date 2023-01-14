@@ -1,0 +1,6 @@
+# Template For Loop
+for(int i = 0;i<nums.length;i++){
+print("i= " ,i);
+}
+#Template print statement
+print("= " ,);		

@@ -17,8 +17,10 @@ import lombok.ToString;
 
 public class Solution {	
 public List<List<String>> threeSum(int[] nums){
-	Arrays.sort(nums);
+	
 	int pivot;
+	Arrays.sort(nums);
+	print("nums= " ,Arrays.toString(nums));
 	try {
 		pivot = findPivot (nums);
 print("pivot = ", pivot);
@@ -26,26 +28,31 @@ print("pivot = ", pivot);
 		print("array has no pivot");
 		return ThreeSumMatch.getSolutionOutPut(); 
 	}
-	
+	findThreeSums(nums, pivot);
+	print("threesums =",ThreeSumMatch.getSolutionOutPut());
+		return ThreeSumMatch.getSolutionOutPut();
+}
+private void findThreeSums(int[] nums, int pivot) {
 	var possibleMatch = new ThreeSumMatch ();
-	
-			possibleMatch.setSmallestNum(nums[0]);;
+	for(int i = 0;i<=pivot;i++){
+			possibleMatch.setSmallestNum(nums[i]);
+			print("i= " ,i);
 			print("possibleMatch = " ,possibleMatch);
-			for(int j=nums.length-1;j>=pivot;j-- ){
+			for(int j=nums.length-1;j>pivot;j-- ){
 		possibleMatch.setLargestNum(nums[j]);
 		print("possibleMatch = " ,possibleMatch);
 		print("j= " ,j);
-		int foundIndex = Arrays.binarySearch(nums,1,j,possibleMatch.calcMisngNum());
+		int foundIndex = Arrays.binarySearch(nums,i+1,j,possibleMatch.calcMisngNum());
 		print("foundIndex= " ,foundIndex );
 		if(foundIndex  > 0) {
 			possibleMatch.setMiddleNum(nums[foundIndex]);
 			print("foundMatch = " ,possibleMatch);
 			ThreeSumMatch.addMatch(possibleMatch);
+			possibleMatch = new ThreeSumMatch ();
 			break;
 		}
 	}
-	print("threesums =",ThreeSumMatch.getSolutionOutPut());
-		return ThreeSumMatch.getSolutionOutPut();
+	}
 }
 private int findPivot(int[] nums) {
 	int i;

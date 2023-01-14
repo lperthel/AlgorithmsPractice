@@ -19,17 +19,19 @@ actual = null;
 Solution.ThreeSumMatch.clearMatches();
 }
 @Test
-public void test_GivenMultiElementArraySingleMatch_ReturnMatch() {
-	int[] multiElementArray = {-1,0,1,2};
-expected.add(Arrays.asList("-1","0","1"));
+public void test_GivenMultiElementArrayMultipleMatches_ReturnMatches() {
+	final int[] multiElementArray = {-1,0,1,2,-1,-4};
+	expected.add(Arrays.asList("-1","-1","2"));
+	expected.add(Arrays.asList("-1","0","1"));
 actual = solution.threeSum(multiElementArray );
 print("actual = ",actual);
 assertEquals(expected,actual);
 }
+
 @Test
-public void test_GivenMultiElementArrayMultipleMatches_ReturnMatches() {
-	final int[] multiElementArray = {-1,0,1,2,-1,-4};
-	expected.add(Arrays.asList("-1","0","1"));
+public void test_GivenMultiElementArraySingleMatch_ReturnMatch() {
+	int[] multiElementArray = {-1,0,1,2};
+expected.add(Arrays.asList("-1","0","1"));
 actual = solution.threeSum(multiElementArray );
 print("actual = ",actual);
 assertEquals(expected,actual);
