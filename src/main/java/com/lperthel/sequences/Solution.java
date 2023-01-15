@@ -1,12 +1,12 @@
 	package com.lperthel.sequences;
 
+import static com.lperthel.util.Printer.print;
+
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
-
-import static com.lperthel.util.Printer.print;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
