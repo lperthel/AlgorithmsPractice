@@ -62,10 +62,12 @@ private int findPivot(int[] nums) {
 	int i;
 	
 	for(i=0;i<nums.length;i++ ){
-		if(nums[i +1 ]==0)
+		if(nums[i ]==0)
 break;
-		else if(i+1 < nums.length && nums[i]<0 && nums[i+1] > 0)
+		else if(i+1 < nums.length && nums[i]<0 && nums[i+1] > 0) {
+			i++;
 			break;
+		}
 	}
 	if(i == nums.length)
 			throw new IllegalArgumentException();

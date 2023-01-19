@@ -19,6 +19,8 @@ expected = new ArrayList<>() ;
 actual = null;
 Solution.ThreeSumMatch.clearMatches();
 }
+
+
 @Test
 public void test_GivenMultiElementArrayMultipleMatches_ReturnMatches() {
 	final int[] multiElementArray = {-1,0,1,2,-1,-4};
@@ -40,7 +42,7 @@ assertEquals(expected,actual);
 
 @Test
 public void test_GivenArrayWithNoThreeSums_ReturnEmptyList() {
-	int[] multiElementArray = {-2,0,1};
+	int[] multiElementArray = {0,1,1};
 actual = solution.threeSum(multiElementArray );
 print("actual = ",actual);
 assertEquals(expected,actual);
@@ -53,6 +55,5 @@ actual = solution.threeSum(multiElementArray );
 print("actual = ",actual);
 assertEquals(expected,actual);
 }
-
 
 }
