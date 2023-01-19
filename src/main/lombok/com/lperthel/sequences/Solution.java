@@ -1,6 +1,6 @@
 	package com.lperthel.sequences;
 
-import static com.lperthel.util.Printer.print;
+
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -16,37 +16,41 @@ import lombok.Setter;
 import lombok.ToString;
 
 public class Solution {	
-public List<List<String>> threeSum(int[] nums){
+public List<List<Integer>> threeSum(int[] nums){
 	
 	int pivot;
 	Arrays.sort(nums);
-	print("nums= " ,Arrays.toString(nums));
+	Printer1.print("nums= " ,Arrays.toString(nums));
 	try {
 		pivot = findPivot (nums);
-print("pivot = ", pivot);
+		Printer1.print("pivot = ", pivot);
 	}catch(IllegalArgumentException e) {
-		print("array has no pivot");
+		Printer1.print("array has no pivot");
 		return ThreeSumMatch.getSolutionOutPut(); 
 	}
 	findThreeSums(nums, pivot);
-	print("threesums =",ThreeSumMatch.getSolutionOutPut());
+	Printer1.print("threesums =",ThreeSumMatch.getSolutionOutPut());
 		return ThreeSumMatch.getSolutionOutPut();
 }
+/**
+ * @param nums
+ * @param pivot
+ */
 private void findThreeSums(int[] nums, int pivot) {
 	var possibleMatch = new ThreeSumMatch ();
 	for(int i = 0;i<=pivot;i++){
 			possibleMatch.setSmallestNum(nums[i]);
-			print("i= " ,i);
-			print("possibleMatch = " ,possibleMatch);
+			Printer1.print("i= " ,i);
+			Printer1.print("possibleMatch = " ,possibleMatch);
 			for(int j=nums.length-1;j>pivot;j-- ){
 		possibleMatch.setLargestNum(nums[j]);
-		print("possibleMatch = " ,possibleMatch);
-		print("j= " ,j);
+		Printer1.print("possibleMatch = " ,possibleMatch);
+		Printer1.print("j= " ,j);
 		int foundIndex = Arrays.binarySearch(nums,i+1,j,possibleMatch.calcMisngNum());
-		print("foundIndex= " ,foundIndex );
+		Printer1.print("foundIndex= " ,foundIndex );
 		if(foundIndex  > 0) {
 			possibleMatch.setMiddleNum(nums[foundIndex]);
-			print("foundMatch = " ,possibleMatch);
+			Printer1.print("foundMatch = " ,possibleMatch);
 			ThreeSumMatch.addMatch(possibleMatch);
 			possibleMatch = new ThreeSumMatch ();
 			break;
@@ -88,13 +92,22 @@ threeSums.clear();
 	public static boolean addMatch(ThreeSumMatch match){
 return  threeSums.add((match));
 	 }
- private List<String> toStringList(){		
- return Arrays.asList(""+smallestNum, ""+middleNum,""+largestNum);
+ private List<Integer> toIntegerList(){		
+ return Arrays.asList(smallestNum, middleNum, largestNum);
 	}
-	public static List<List<String>>  getSolutionOutPut() {
-return threeSums.stream().map(e-> e.toStringList()) .collect(Collectors.toList());
+	public static List<List<Integer>>  getSolutionOutPut() {
+return threeSums.stream().map(e-> e.toIntegerList()) .collect(Collectors.toList());
 	}
 	
 }
+protected static class Printer1 {
+public static void print(Object... args){
+	for(Object elem:args) {
+		System.out.print(elem+ " ");
+	}
+	System.out.println();
+}
+}
+	
 
 }
