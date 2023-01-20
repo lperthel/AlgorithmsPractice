@@ -3,6 +3,7 @@
 
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -29,7 +30,6 @@ public List<List<Integer>> threeSum(int[] nums){
 		return ThreeSumMatch.getSolutionOutPut(); 
 	}
 	findThreeSums(nums, pivot);
-	Printer1.print("threesums =",ThreeSumMatch.getSolutionOutPut());
 		return ThreeSumMatch.getSolutionOutPut();
 }
 /**
@@ -85,7 +85,7 @@ public static class ThreeSumMatch{
 	private int middleNum;
 	private int largestNum;
 	public static void clearMatches(){
-threeSums.clear();
+threeSums = new HashSet<>();
 	 }
 	public int calcMisngNum() { 
 		return Math.negateExact(smallestNum+largestNum);
@@ -98,9 +98,11 @@ return  threeSums.add((match));
  return Arrays.asList(smallestNum, middleNum, largestNum);
 	}
 	public static List<List<Integer>>  getSolutionOutPut() {
-return threeSums.stream().map(e-> e.toIntegerList()) .collect(Collectors.toList());
+		List<List<Integer>>   answer =		threeSums.stream().map(e-> e.toIntegerList()) .collect(Collectors.toList());
+		Printer1.print("answer ", answer);
+		clearMatches();
+		return answer;
 	}
-	
 }
 protected static class Printer1 {
 public static void print(Object... args){

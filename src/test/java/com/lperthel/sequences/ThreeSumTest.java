@@ -17,7 +17,6 @@ private List<List<Integer>>actual;
 public void X() {	
 expected = new ArrayList<>() ;
 actual = null;
-Solution.ThreeSumMatch.clearMatches();
 }
 
 
