@@ -29,6 +29,16 @@ actual = solution.threeSum(multiElementArray );
 print("actual = ",actual);
 assertEquals(expected,actual);
 }
+@Test
+public void test_GivenMultiElementArrayMultipleMatches_ReturnMatches2() {
+	final int[] multiElementArray = {2, 1, 0, 1, -2};
+	expected.add(Arrays.asList(-2, 0,2));
+	expected.add(Arrays.asList(-2,1,1));
+actual = solution.threeSum(multiElementArray );
+print("actual = ",actual);
+assertEquals(expected,actual);
+}
+
 
 @Test
 public void test_GivenMultiElementArraySingleMatch_ReturnMatch() {

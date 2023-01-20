@@ -3,7 +3,6 @@
 
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -51,9 +50,8 @@ private void findThreeSums(int[] nums, int pivot) {
 		if(foundIndex  > 0) {
 			possibleMatch.setMiddleNum(nums[foundIndex]);
 			Printer1.print("foundMatch = " ,possibleMatch);
-			ThreeSumMatch.addMatch(possibleMatch);
-			possibleMatch = new ThreeSumMatch ();
-			break;
+			ThreeSumMatch.addMatch(possibleMatch);			possibleMatch = new ThreeSumMatch ();
+			possibleMatch.setSmallestNum(nums[i]);
 		}
 	}
 	}
