@@ -23,7 +23,7 @@ public List<List<Integer>> 	threeSum(int[] nums){
 				while(j < nums.length -1){
 					Printer1.print("entering j loop. j =", j );
 					if(j + 2< nums.length && nums[j] == nums[j+2]) {
-						j=j+2;
+						j++;
 						continue;
 					}
 					Printer1.print("j= " ,j,  ", nums[j] = ", nums[j]);
@@ -32,14 +32,17 @@ public List<List<Integer>> 	threeSum(int[] nums){
 				matches.add(Arrays.asList(nums[i],nums[j],nums[k]));
 				Printer1.print("matches = ",matches);
 			}
-			if(j +2 == nums.length) {
-				Printer1.print(" j too big. ending loop. j = ", j);
-				break;
-}
+			if( nums[j] == nums[j+1]) {
 				j = j+2;
+} else
+	j++;
+				
 				Printer1.print(" Iterating j. j = ",j);
 		}
-				i = i+2;
+				if(nums[i] == nums[i+1]) {
+					i = i+2;
+				} else
+				i ++;
 				Printer1.print(" Iterating i. i = ",i);
 		}
 		return matches;
