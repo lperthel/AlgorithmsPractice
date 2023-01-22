@@ -76,7 +76,7 @@ public void test_GivenTriplesZerosMixedArray_ReturnZeros() {
 expected.add(Arrays.asList(0,0,0));
 actual = solution.threeSum(tripleZeroMixedArray );
 print("actual = ",actual);
-assertEquals(expected,actual);
+	assertEquals(expected,actual);
 }
 @Test
 public void test_GivenQuadZeros_ReturnSinglesZerosMatch() {
