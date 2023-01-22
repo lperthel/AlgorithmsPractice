@@ -14,13 +14,14 @@ public List<List<Integer>> 	threeSum(int[] nums){
 		int i = 0;
 		while(i < nums.length - 2){
 			int j;
-			if(nums[i] != nums[i+2] && nums[i] != 0
-					|| nums[i] == 0 && (  i+3< nums.length && nums[i+3] != 0 
-					|| i+3 == nums.length )) {
+			if(nums[i] == nums[i+2]) { 
+				i++;
+				continue;
+			}
 				Printer1.print("i= " ,i, ", nums[i] = ", nums[i]);
 				j = i+1;
 				while(j < nums.length -1){
-					if(nums[j] == nums[j+2] && nums[j] != 0) {
+					if(nums[j] == nums[j+2]) {
 						j=j+2;
 						continue;
 					}
@@ -33,10 +34,6 @@ public List<List<Integer>> 	threeSum(int[] nums){
 			j = j+2;
 		}
 				i = i+2;
-					}else {
-					i++;
-					continue;
-				}
 		}
 		return matches;
 	}
