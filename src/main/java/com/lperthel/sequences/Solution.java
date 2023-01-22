@@ -21,7 +21,8 @@ public List<List<Integer>> 	threeSum(int[] nums){
 				Printer1.print("i= " ,i, ", nums[i] = ", nums[i]);
 				j = i+1;
 				while(j < nums.length -1){
-					if(j + 2< nums.length & nums[j] == nums[j+2]) {
+					Printer1.print("entering j loop. j =", j );
+					if(j + 2< nums.length && nums[j] == nums[j+2]) {
 						j=j+2;
 						continue;
 					}
