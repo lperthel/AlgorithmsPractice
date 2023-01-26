@@ -7,9 +7,25 @@ import java.util.Set;
 class Solution {
  	   public int[][] merge(int[][] intervals) {
  		   Set<Integer[]> merged= new LinkedHashSet<>();
+ 		   
  		   int [][] answer;
- 		   answer = new int[merged.size()][2];
- 		   int i =0;
+ 		   //do app
+ 		   if(intervals.length == 0)
+ 			   return intervals;
+ 		  int max= intervals[0][1];
+ 		   int min= intervals[0][0];
+ 		  for(int i=0;i<intervals.length;i++) {
+ 			 int[] e = intervals[i];
+ 			                                            if(max  < e[i+1]) {                    
+ 			                                            	Integer[] newBound = {min,max};
+ 			                                            	merged.add(newBound);
+ 			                                            	min = intervals[i+1][0];
+ 			                                            	max= intervals[i+1][1];
+ 			                                            }
+ 		  }
+//format answer
+ 		  answer = new int[merged.size()][2];
+ 		   i =0;
  		   Iterator<Integer[]> mergedIterator = merged.iterator();
  		   while(mergedIterator.hasNext()) {
  			   Integer [] e = mergedIterator.next();
