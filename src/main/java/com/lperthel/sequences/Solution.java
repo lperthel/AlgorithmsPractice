@@ -1,99 +1,79 @@
 package com.lperthel.sequences;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
+public class Solution {
+	public List<List<Integer>> 	threeSum(int[] nums){
+		List<List<Integer>>  matches = new ArrayList<>();
+		Arrays.sort(nums);
+		//P.t("nums = ", Arrays.toString(nums));
+final int n = nums.length;
+int i = 0;
 
-public final class Solution {
-
-	public int maxProduct(int[] nums) {
-
-		int startIndex = 0;
-		int endIndex; 
-		int maxProduct = Integer.MIN_VALUE;
-		int subArrayProduct;
-		boolean arrayHasZeroAsAnElement = false;
-		if(nums.length ==1) {
-			return nums[0];
-		}
-		startIndex = findNextNonZeroIndex(startIndex ,nums);
-		if(startIndex !=0) {
-			arrayHasZeroAsAnElement = true;
-		}
-		while(startIndex < nums.length){
-			endIndex =getIndexOfNextZeroOrEndOfArray(startIndex, nums);
-			if(endIndex < nums.length) {
-				arrayHasZeroAsAnElement = true;
-			}
-			subArrayProduct = findMaxProductWithinArrayBounds(startIndex, endIndex, nums);
-			if(maxProduct < subArrayProduct) {
-				maxProduct =subArrayProduct; 
-			}
-			startIndex = endIndex +1;
-//			startIndex = findNextNonZeroIndex(endIndex +1,nums);
-		}
-
-		if(arrayHasZeroAsAnElement && maxProduct < 0) {
-
-			maxProduct = 0;
-		}
-
-		return maxProduct;
+while(i < n-2){
+	//P.t("i = ",i );
+//handle triple zero case
+if(nums[i] == 0
+		&& nums[i+1] == 0
+		&& nums[i+2] == 0) {
+	matches.add(Arrays.asList(0,0,0));
+	while(i+2 < nums.length &&nums[i+2] == 0) {
+		i++;
 	}
+	continue;
+}
 
-	public int findNextNonZeroIndex(int startIndex, int[] nums){
-
-		for(;startIndex< nums.length;startIndex++) {
-			if(nums[startIndex] != 0){
-				break;
-			}
-		}
-		return startIndex;
+// avoid duplicates
+if(nums[i] == nums[i+2]) {
+	i++;
+	continue;
+}
+//make two pointers
+int left= i+1;
+int right = n - 1;
+while(left <right ) {
+	//P.t("left = ",left );
+	//P.t("right = ",right );
+	if(left+ 2< nums.length && nums[left] == nums[left+2]) {
+		left++;
+		continue;
 	}
-	public int findMaxProductWithinArrayBounds(int startIndex, int endIndex, int[] nums) {
-		if(endIndex - startIndex ==1) {
-			return nums[startIndex];
-		}
-		int prefixProduct = 1;
-		int suffixProduct = 1;
-		int maxProduct;
-		int currentElement;
-		for(int i = startIndex; i<endIndex;i++) {
-			currentElement = nums[i];
-			suffixProduct *= nums[i];
-		}
-		maxProduct = suffixProduct;
-		for(int i = startIndex; i<endIndex;i++) {
-			currentElement = nums[i];
-			if(currentElement > maxProduct) {
-				maxProduct = currentElement;
-			}
-			suffixProduct /= currentElement;
-			if( suffixProduct> maxProduct  && i+1 !=endIndex) {
-				maxProduct = suffixProduct;
-			}
-			if(prefixProduct > maxProduct && i !=startIndex) {
-				maxProduct = prefixProduct ;
-			}				
-			prefixProduct *= currentElement;
-
-		}
-
-		return maxProduct;
+	
+	int sum = nums[i]+nums[left]+nums[right];
+	//P.t("sum = ", sum);
+	if( sum < 0)
+		left ++;
+	else if (sum == 0) {
+	matches.add(Arrays.asList(nums[i], nums[left] ,nums[right]));
+	//P.t("matches = ", matches);
+	//avoid dups	
+	if(nums[left] == nums[left+1]) 
+			left = left+2;
+		 else
+		left++;
+}
+		else
+			right--;
 	}
+	if(nums[i] == nums[i+1]) 
+		i = i+2;
+	 else
+	i ++;
 
-	public int getIndexOfNextZeroOrEndOfArray(int startIndex, int[] nums) {
-
-		int indexOfNextZeroOrEndOfArray  = -1;
-		int i = startIndex;
-		while(indexOfNextZeroOrEndOfArray == -1) {
-			if(nums[i] ==0) {
-				indexOfNextZeroOrEndOfArray  = i;
-			}
-			else if(i+1 == nums.length) {
-				indexOfNextZeroOrEndOfArray = nums.length; 
-			}
-			i++;
-		}
-		return indexOfNextZeroOrEndOfArray ;
+}
+//P.t("exiting");
+return matches;
 	}
-
-
+	
+protected static class P{
+public static void t(Object... args){
+	for(Object elem:args) {
+o		System.out.print(elem+ " ");
+	}
+	System.out.println();
+}
+}
+	
+	
 }

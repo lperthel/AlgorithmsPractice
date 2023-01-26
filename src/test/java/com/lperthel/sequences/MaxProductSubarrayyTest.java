@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class MaxProductSubarrayyTest {
 
-	private Solution  maxProductSubArray  = new Solution ();
+	private MaxProductSubarray  maxProductSubArray  = new MaxProductSubarray ();
 
 	@Test
 	public void testgetIndexOfNextZeroOrEndOfArray(){ 
