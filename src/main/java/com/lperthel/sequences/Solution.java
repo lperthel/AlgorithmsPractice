@@ -15,17 +15,19 @@ class Solution {
  		  int max= intervals[0][1];
  		   int min= intervals[0][0];
  		  for(int i=0;i<intervals.length;i++) {
- 			 int[] e = intervals[i];
- 			                                            if(max  < e[i+1]) {                    
+ 			  int[] e = intervals[i];
+ 			                                            if(i+1 == intervals.length || max  < e[i+1]) {                    
  			                                            	Integer[] newBound = {min,max};
  			                                            	merged.add(newBound);
- 			                                            	min = intervals[i+1][0];
+ 			                                            	if(i+1 != intervals.length)
+ 			                                            	{ 			                                            	min = intervals[i+1][0];
  			                                            	max= intervals[i+1][1];
+ 			                                            	}
  			                                            }
  		  }
 //format answer
  		  answer = new int[merged.size()][2];
- 		   i =0;
+ 		   int i =0;
  		   Iterator<Integer[]> mergedIterator = merged.iterator();
  		   while(mergedIterator.hasNext()) {
  			   Integer [] e = mergedIterator.next();
