@@ -10,7 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 public class ThreeSumTest {
-private Solution solution = new Solution();
+private ThreeSum solution = new ThreeSum ();
 private List<List<Integer>>expected ;
 private List<List<Integer>>actual;
 @BeforeEach
