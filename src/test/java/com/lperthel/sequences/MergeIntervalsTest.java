@@ -19,9 +19,8 @@ private 	int[][]  actual;
 
 	@Test
 	void test_Given4ElementArrayWith3Overlaps_Return3ElementArray() {
-//		final int[][] input = {{1,3},{2,6},{8,10},{15,18}};
-		final int[][] input = {{1,3},{2,6}};
-		int[][] expected  = {{1,6}};
+final int[][] input = {{1,3},{2,6},{8,10},{15,18}};
+		int[][] expected  = {{1,6},{8,10},{15,18}};
 		actual = solution .merge(input);
 		assertEquals(Arrays.deepToString(expected),Arrays.deepToString(actual));
 	}
