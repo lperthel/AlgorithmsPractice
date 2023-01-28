@@ -24,8 +24,7 @@ class Solution {
  		   P.t("intervals =", Arrays.deepToString(intervals));
  		   Pair[] intervalPairs =  new Pair[intervals.length];
  		   for(int i=0;i<intervals.length;i++) {
- 			   intervalPairs[i].setMin(intervals[i][0]);
- 			  intervalPairs[i].setMax(intervals[i][1]);
+ 			   intervalPairs[i] = new Pair(intervals[i][0],intervals[i][1]);
  		   }
  		   P.t(Arrays.toString(intervalPairs));;
 Arrays.sort(intervalPairs); 		   
@@ -40,7 +39,6 @@ Arrays.sort(intervalPairs);
  			 P.t("min= ", min);
  			  P.t("max= ", max);
  			  if(i< intervals.length) {
- 				 e =  intervals[i];
  				P.t("intervals[i=] ", intervals[i]);
  			  }
  			                                            if(i ==  intervals.length ||   max <  intervals[i].getMin()) {                    
@@ -84,6 +82,7 @@ Arrays.sort(intervalPairs);
 	@ToString
 	@EqualsAndHashCode
 	@NoArgsConstructor
+	@AllArgsConstructor
 	protected class Pair implements Comparable<Pair>{
 		private Integer min;
 		private Integer max;
