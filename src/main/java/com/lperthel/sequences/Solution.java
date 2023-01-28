@@ -5,6 +5,13 @@ import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
 class Solution {
  	   /**
  	 * @param intervals
@@ -13,42 +20,48 @@ class Solution {
  	public int[][] merge(int[][] intervals) {
  		   Set<Integer[]> merged= new LinkedHashSet<>();
  		   
- 		   int [][] answer;
  		   //do app
  		   P.t("intervals =", Arrays.deepToString(intervals));
- 		  int max= intervals[0][1];
- 		   int min= intervals[0][0];
- 		  for(int i=1;i <= intervals.length;i++) {
- 			 int[] e = null;
+ 		   Pair[] intervalPairs =  new Pair[intervals.length];
+ 		   for(int i=0;i<intervals.length;i++) {
+ 			   intervalPairs[i].setMin(intervals[i][0]);
+ 			  intervalPairs[i].setMax(intervals[i][1]);
+ 		   }
+ 		   P.t(Arrays.toString(intervalPairs));;
+Arrays.sort(intervalPairs); 		   
+ 		  helper(intervalPairs, merged);
+ 		  return formatAnswer(merged);
+    }
+	private void helper(Pair[]  intervals, Set<Integer[]> merged) {
+		int min=  intervals[0].getMin();
+ 		   int max =  intervals[0].getMax();
+ 		  for(int i=1;i <=  intervals.length;i++) {
  			  P.t("i= ", i);
  			 P.t("min= ", min);
  			  P.t("max= ", max);
- 			  if(i<intervals.length) {
- 				 e = intervals[i];
- 				P.t("intervals[i=] ", Arrays.toString(e));
+ 			  if(i< intervals.length) {
+ 				 e =  intervals[i];
+ 				P.t("intervals[i=] ", intervals[i]);
  			  }
- 			                                            if(i == intervals.length ||   max < intervals[i][0]) {                    
+ 			                                            if(i ==  intervals.length ||   max <  intervals[i].getMin()) {                    
  			                                            	P.t("updating bounds");
  			                                            	Integer[] newBound = {min,max};
  			                                            	P.t("newBound= ", Arrays.deepToString(newBound));
  			                                            	merged.add(newBound);
  			                                            	P.t("merged = ",Arrays.deepToString(merged.toArray()));
- 			                                            	if(i != intervals.length) {	
- 			                                            	min = e[0];
- 			                                            	max= e[1];
+ 			                                            	if(i !=  intervals.length) {	
+ 			                                            	min =intervals[i].getMin();
+ 			                                            	max= intervals[i].getMax();
  			                                            	P.t("new min= ", min);
  			                                            	P.t("new max= ", max);
  			                                            	}
  			                                            }
  			                                            else {
- 			                                            	max= e[1];
+ 			                                            	max= intervals[i].getMax();;
  			                                            	P.t("new max= ", max);
  			                                            }
  		  }
- 		  
-//format answer
- 		  return formatAnswer(merged);
-    }
+	}
 	private int[][] formatAnswer(Set<Integer[]> merged) {
 		int[][] answer;
 		answer = new int[merged.size()][2];
@@ -66,9 +79,23 @@ class Solution {
  		  
  		   return answer;
 	}
+	@Getter
+	@Setter
+	@ToString
+	@EqualsAndHashCode
+	@NoArgsConstructor
+	protected class Pair implements Comparable<Pair>{
+		private Integer min;
+		private Integer max;
+		@Override
+		public int compareTo(Pair o) {
+			return min - o.min;
+		}
+	}
  	  protected static class P{
  		 public static void t(Object... args){
- 		 	for(Object elem:args) {		
+ 
+ 			 for(Object elem:args) {		
  		 		System.out.print(elem+ " ");
  		 	}
  		 	System.out.println();
