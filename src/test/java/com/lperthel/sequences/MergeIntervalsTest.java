@@ -27,7 +27,7 @@ final int[][] input = {{1,3},{2,6},{8,10},{15,18}};
 	@Test
 	void test_GivenSingleOverlap_ReturnSingleElementArray() {
 final int[][] input = {{1,4},{2,3}};
-		int[][] expected  = {{14,}};
+		int[][] expected  = {{1,4,}};
 		actual = solution .merge(input);
 		assertEquals(Arrays.deepToString(expected),Arrays.deepToString(actual));
 	}
