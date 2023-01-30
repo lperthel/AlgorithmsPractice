@@ -2,14 +2,12 @@ package com.lperthel.sequences;
 
 import java.util.Arrays;
 import java.util.Comparator;
-import java.util.Iterator;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.LinkedList;
+import java.util.List;
 
 class Solution {
-	private Set<Integer[]> merged= new LinkedHashSet<>();
- 	   public int[][] merge(int[][] intervals) {
- 		   
+ 	List<int[]> merged = new LinkedList<>();   
+	public int[][] merge(int[][] intervals) {
  		   
  		   //do app
  		   if(intervals.length == 1)
@@ -17,9 +15,9 @@ class Solution {
 Arrays.sort(intervals, Comparator.comparingInt( e -> e[0]));
 //P.t("intervals =", Arrays.deepToString(intervals));
  		   	  helper(intervals);
- 		  return formatAnswer();
+ 		   	  return merged .toArray(new int[merged.size()][]);
     }
-	private void helper(int[][]  intervals) {
+	void helper(int[][]  intervals) {
 		int min=  intervals[0][0];
  		   int max =  intervals[0][1];
  		  for(int i=1;i <  intervals.length;i++) {
@@ -27,7 +25,7 @@ Arrays.sort(intervals, Comparator.comparingInt( e -> e[0]));
  			 //P.t("min= ", min);
  			  //P.t("max= ", max);
  				//P.t("intervals[i=] ", intervals[i]);
- 			                                            if(i ==  intervals.length ||   max <  intervals[i][0]) {                    
+ 			                                            if(max <  intervals[i][0]) {                    
  			                                            	updateBounds(min, max);
  			                                            	min =intervals[i][0];
  			                                            	max= intervals[i][1];
@@ -41,33 +39,14 @@ Arrays.sort(intervals, Comparator.comparingInt( e -> e[0]));
  			                                            }
  			                                           if(i+1 == intervals.length)
  			                                        		updateBounds(min,max);
-
  		  }
- 		  
 	}
 	private void updateBounds(int min, int max) {
 		//P.t("updating bounds");
-		Integer[] newBound = {min,max};
-		//P.t("newBound= ", Arrays.deepToString(newBound));
+		int[] newBound = {min,max};
+		//P.t("newBound= ", Arrays.toString(newBound));
 		merged.add(newBound);
 		//P.t("merged = ",Arrays.deepToString(merged.toArray()));
-	}
-	private int[][] formatAnswer() {
-		int[][] answer;
-		answer = new int[merged.size()][2];
- 		   int i =0;
- 		   Iterator<Integer[]> mergedIterator = merged.iterator();
- 		   while(mergedIterator.hasNext()) {
- 			   Integer [] e = mergedIterator.next();
- 			  answer[i][0] = e[0];
- 			  answer[i][1] = e[1];
- 			 //P.t("e= ", Arrays.deepToString(e));
- 			 //P.t("answer= ", Arrays.deepToString(answer));
- 			i++;
- 		   }
- 		  
- 		  
- 		   return answer;
 	}
 	 	  protected static class P{
  		 public static void t(Object... args){
