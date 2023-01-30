@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Solution {
+public class ThreeSum {
 	public List<List<Integer>> 	threeSum(int[] nums){
 		List<List<Integer>>  matches = new ArrayList<>();
 		Arrays.sort(nums);
@@ -68,8 +68,8 @@ return matches;
 	
 protected static class P{
 public static void t(Object... args){
-	for(Object elem:args) {
-o		System.out.print(elem+ " ");
+	for(Object elem:args) {		
+		System.out.print(elem+ " ");
 	}
 	System.out.println();
 }
