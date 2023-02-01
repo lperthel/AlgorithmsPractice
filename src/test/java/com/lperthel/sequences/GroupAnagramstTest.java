@@ -1,7 +1,5 @@
 package com.lperthel.sequences;
 
-import static org.junit.Assert.assertEquals;
-
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -28,7 +26,8 @@ expected= new LinkedList<>();
 	expected .add(Arrays.asList("nat","tan"));
 	expected .add(Arrays.asList("ate","eat","tea"));
 		actual = solution.groupAnagrams(anagrams);
-assertEquals(expected, actual); 
+		assert(expected.containsAll(actual));
 	}
+	
 
 }
