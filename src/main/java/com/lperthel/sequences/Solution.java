@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 class Solution {
         public List<List<String>> groupAnagrams(String[] strs) {
@@ -18,7 +19,7 @@ class Solution {
         	word.chars().forEach(letter ->{
         		P.t("letter= ", letter);
         		anagramKey[letter - 97]++;
-        		P.t("anagramKey= ", anagramKey);
+        		P.t("anagramKey= ", Arrays.toString(anagramKey));
         	});
         	StringBuilder letterCount = new StringBuilder("");
         	for(int i =0;i<anagramKey.length;i++) {
@@ -35,6 +36,8 @@ class Solution {
         	group.add(word);
         	P.t("Updating anagramGroups. Group now = ", anagramGroups.get(letterCount.toString()));
         });
+        	
+        	answer = anagramGroups.values().stream().collect(Collectors.toList());		
         	P.t("answer= ", answer);
         	return answer;
         }
