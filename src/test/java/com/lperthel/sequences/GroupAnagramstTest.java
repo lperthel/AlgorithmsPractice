@@ -2,6 +2,7 @@ package com.lperthel.sequences;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -23,9 +24,11 @@ expected= new LinkedList<>();
 	@Test
 	void test_GivenGroupOfAnagrams_ExpectGroupedAnagrams() {
 		String[] anagrams = { "eat","tea","tan","ate","nat","bat"};
-	actual = solution.groupAnagrams(anagrams);
-	boolean testEquality;
-	assertEquals(expected.size(), actual.size());
+	expected .add(Arrays.asList("bat"));
+	expected .add(Arrays.asList("nat","tan"));
+	expected .add(Arrays.asList("ate","eat","tea"));
+		actual = solution.groupAnagrams(anagrams);
+assertEquals(expected, actual); 
 	}
 
 }
