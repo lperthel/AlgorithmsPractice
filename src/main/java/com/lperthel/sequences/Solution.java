@@ -18,7 +18,8 @@ class Solution {
         	P.t("word= ", word);
         	word.chars().forEach(letter ->{
         		P.t("letter= ", letter);
-        		anagramKey[letter - 97]++;
+        		final int asciiOffset = 97;
+        		anagramKey[letter - asciiOffset ]++;
         		P.t("anagramKey= ", Arrays.toString(anagramKey));
         	});
         	StringBuilder letterCount = new StringBuilder("");

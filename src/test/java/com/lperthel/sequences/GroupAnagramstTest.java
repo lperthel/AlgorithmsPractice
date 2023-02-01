@@ -7,6 +7,8 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import com.lperthel.util.Lists;
+
 class GroupAnagramstTest {
 private Solution solution = new Solution();
 private List<List<String>> expected;
@@ -26,8 +28,26 @@ expected= new LinkedList<>();
 	expected .add(Arrays.asList("nat","tan"));
 	expected .add(Arrays.asList("ate","eat","tea"));
 		actual = solution.groupAnagrams(anagrams);
-		assert(expected.containsAll(actual));
+		assert(Lists.deepContainsAll(actual, expected));
+		assert(Lists.deepContainsAll(expected, actual));
 	}
 	
+	@Test
+	void 	ttestGivenEmptyStringArray_ExpectListOfListEmptyString() {
+		String[] anagrams = {""}; 
+	expected .add(Arrays.asList(""));
+		actual = solution.groupAnagrams(anagrams);
+		assert(Lists.deepContainsAll(actual, expected));
+		assert(Lists.deepContainsAll(expected, actual));
+	}
 
+	@Test
+	void 	TestGivenNonAnagramsWithIdenticalAnagramKeysExpectDifferentAnagramGroups() {
+		String[] anagrams = {"bdddddddddd", "bbbbbbbbbbc"}; 
+	expected .add(Arrays.asList("bdddddddddd"));
+	expected .add(Arrays.asList("bbbbbbbbbbc"));
+		actual = solution.groupAnagrams(anagrams);
+		assert(Lists.deepContainsAll(actual, expected));
+		assert(Lists.deepContainsAll(expected, actual));
+	}
 }
