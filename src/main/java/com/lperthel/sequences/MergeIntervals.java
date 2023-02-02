@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
-class Solution {
+class MergeIntervals {
  	List<int[]> merged = new LinkedList<>();   
 	public int[][] merge(int[][] intervals) {
  		   
