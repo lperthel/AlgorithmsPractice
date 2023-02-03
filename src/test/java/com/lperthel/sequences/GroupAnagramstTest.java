@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import com.lperthel.util.Lists;
 
 class GroupAnagramstTest {
-private Solution solution = new Solution();
+private GroupAnagrams groupAnagrams = new GroupAnagrams();
 private List<List<String>> expected;
 private List<List<String>> actual;
 
@@ -27,7 +27,7 @@ expected= new LinkedList<>();
 	expected .add(Arrays.asList("bat"));
 	expected .add(Arrays.asList("nat","tan"));
 	expected .add(Arrays.asList("ate","eat","tea"));
-		actual = solution.groupAnagrams(anagrams);
+		actual = groupAnagrams.groupAnagrams(anagrams);
 		assert(Lists.deepContainsAll(actual, expected));
 		assert(Lists.deepContainsAll(expected, actual));
 	}
@@ -36,7 +36,7 @@ expected= new LinkedList<>();
 	void 	ttestGivenEmptyStringArray_ExpectListOfListEmptyString() {
 		String[] anagrams = {""}; 
 	expected .add(Arrays.asList(""));
-		actual = solution.groupAnagrams(anagrams);
+		actual = groupAnagrams.groupAnagrams(anagrams);
 		assert(Lists.deepContainsAll(actual, expected));
 		assert(Lists.deepContainsAll(expected, actual));
 	}
@@ -46,7 +46,7 @@ expected= new LinkedList<>();
 		String[] anagrams = {"bdddddddddd", "bbbbbbbbbbc"}; 
 	expected .add(Arrays.asList("bdddddddddd"));
 	expected .add(Arrays.asList("bbbbbbbbbbc"));
-		actual = solution.groupAnagrams(anagrams);
+		actual = groupAnagrams.groupAnagrams(anagrams);
 		assert(Lists.deepContainsAll(actual, expected));
 		assert(Lists.deepContainsAll(expected, actual));
 	}
