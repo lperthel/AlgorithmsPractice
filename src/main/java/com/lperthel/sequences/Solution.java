@@ -9,23 +9,41 @@ public int search(int[] nums, int target) {
 	int left=0;
 	int right= n-1;
 	boolean foundBound = false;
-	if(rotated && target < nums[0]) {
+	if(target == nums[left])
+			return left;
+	else if(target == nums[right])
+		return right;
+	else if(rotated && target < nums[0]) {
 		while(!foundBound) {
+			int avgIndex = (left+right)/2;
+			int backoffIndex=((2*left- right) + left)/2;
+			printBounds(left, right, avgIndex, backoffIndex);
 int 			leftElem = nums[left];
-			int rightElem = nums[right];
-			int avgElem 		= nums[(leftElem+rightElem )/2];
-			if(leftElem == target) {
+int rightElem = nums[right];
+int avgElem 		= nums[avgIndex];
+printElems(leftElem, rightElem, avgElem);
+			if(leftElem ==target || left < target) {
+				P.t("Found bound at index", left);
 				foundBound = true;
-			}
-			else if(leftElem >rightElem && avgElem >target) {
-		left = avgElem;	}
-				
+			}else if(target < leftElem && leftElem < nums[0] ) {
+					left = backoffIndex;
+		} else {
+			left = avgIndex;
 		}
-	} else {
-		left = 0;
-		right = n;
-	}
+			}
+	} 
 return Arrays.binarySearch(nums,left, right,target);
+}
+private void printElems(int leftElem, int rightElem, int avgElem) {
+	P.t("leftElem = ", leftElem );
+				P.t("rightElem = ", rightElem );
+				P.t("avgElem 		= ", avgElem 		);
+}
+private void printBounds(int left, int right, int avgIndex, int backoffIndex) {
+	P.t("left= ", left);
+	P.t("right= ", right);
+	P.t("avgIndex= ", avgIndex);
+	P.t("backoffIndex= ", backoffIndex);		;
 }
 protected static class P{
 	 public static void t(Object... args){
