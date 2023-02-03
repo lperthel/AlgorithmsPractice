@@ -18,7 +18,15 @@ private Solution solution = new Solution();
 		final int expected = 4;
 		int actual = solution.search(nums,  target);
 		assertEquals(expected,actual);
-		
 	}
 
+
+@Test
+void testGivenRotatedArrayWithExistingTargetOnRightSide_ExpectIndexOfTarget() {
+	final int [] nums = {5,6,7,8,9,0,1,2,3,4};
+	final int target = 1;
+	final int expected = 6;
+	int actual = solution.search(nums,  target);
+	assertEquals(expected,actual);
 }
+} 
