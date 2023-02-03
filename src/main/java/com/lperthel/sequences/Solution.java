@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 public class Solution {
 public int search(int[] nums, int target) {
+	P.t("nums= ", Arrays.toString(nums));
+	P.t("target= ", target);
 	int n = nums.length;
 	boolean rotated = nums[0] > nums[n-1];
 	int left=0;
@@ -22,7 +24,7 @@ int 			leftElem = nums[left];
 int rightElem = nums[right];
 int avgElem 		= nums[avgIndex];
 printElems(leftElem, rightElem, avgElem);
-			if(leftElem ==target || left < target) {
+			if(leftElem <=target ) {
 				P.t("Found bound at index", left);
 				foundBound = true;
 			}else if(target < leftElem && leftElem < nums[0] ) {
