@@ -23,10 +23,12 @@ private Solution solution = new Solution();
 
 @Test
 void testGivenRotatedArrayWithExistingTargetOnRightSide_ExpectIndexOfTarget() {
-	final int [] nums = {5,6,7,8,9,0,1,2,3,4};
-	final int target = 1;
-	final int expected = 6;
-	int actual = solution.search(nums,  target);
-	assertEquals(expected,actual);
+	final int [] nums = {5,6,7,8,9,0,1,2,4};
+final int [] targets= {0,1,2,4};
+	final int [] expecteds= {5,6,7,8};
+	
+	for(int i=0;i<targets.length;i++) {
+		assertEquals(expecteds[i],solution.search(nums,  targets[i]));	
+	}
 }
 } 
