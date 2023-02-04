@@ -26,15 +26,25 @@ int avgElem 		= nums[avgIndex];
 printElems(leftElem, rightElem, avgElem);
 			if(leftElem <=target ) {
 				P.t("Found bound at index", left);
-				foundBound = true;
-			}else if(target < leftElem && leftElem < nums[0] ) {
+				break;
+			}else if(leftElem >rightElem && nums[left+1] > target && nums[left+1] < rightElem) {
+				P.t("target does not exist");
+				left = -1;
+				break;
+			}else if(leftElem < nums[0] ) {
 					left = backoffIndex;
 		} else {
 			left = avgIndex;
 		}
 			}
-	} 
-return Arrays.binarySearch(nums,left, right,target);
+	}
+	if(left == -1)
+		return -1;
+
+	int binarySearchResult = Arrays.binarySearch(nums,left, right,target);
+	if(binarySearchResult < 0)
+		binarySearchResult = -1;
+	return binarySearchResult;
 }
 private void printElems(int leftElem, int rightElem, int avgElem) {
 	P.t("leftElem = ", leftElem );

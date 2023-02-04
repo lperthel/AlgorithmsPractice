@@ -11,7 +11,6 @@ class GroupAnagrams {
         private Map<String, List<String>> anagramGroups;
 		public List<List<String>> groupAnagrams(String[] strs) {
         	anagramGroups = new HashMap<>();
-        	List<List<String>> answer = new LinkedList<>();
         	
         	//P.t("strs =" , Arrays.toString(strs));;
         	Arrays.stream(strs).forEach( word ->{
