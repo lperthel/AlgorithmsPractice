@@ -34,7 +34,15 @@ final int [] expecteds= {-1, 0,1,2,-1,3,-1};
 	
 	for(int i=0;i<targets.length;i++) {
 		assertEquals(expecteds[i],solution.search(nums,  targets[i]));	
+	}}
+@Test
+@Timeout(value = 50, unit = TimeUnit.MILLISECONDS,threadMode = Timeout.ThreadMode.SEPARATE_THREAD)
+void  testGiven2ElementArrayWithNonExistanTarget_ExpectNegativeOne() {
+	final int [] nums = {3,1};
+final int [] targets= {0,2,4};
+final int [] expecteds= {-1,-1,-1};
+	for(int i=0;i<targets.length;i++) {
+		assertEquals(expecteds[i],solution.search(nums,  targets[i]));	
 	}
-}
-
 } 
+}
