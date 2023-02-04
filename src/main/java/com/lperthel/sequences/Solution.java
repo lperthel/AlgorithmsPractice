@@ -41,7 +41,12 @@ if(target < nums[0]) {
 				if(rightElem>=target ) {
 					P.t("Found right bound at index", right);
 					break;
-} else if(rightElem > nums[n-1]){
+} else if(leftElem<rightElem && nums[right+1] < target && nums[right+1]<rightElem) {
+	P.t("target does not exist");
+	left = -1;
+	break;
+
+}else if(rightElem > nums[n-1]){
 	right = backoffIndex;
 } else {
 	right = avgIndex;
