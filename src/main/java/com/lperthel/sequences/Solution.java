@@ -10,13 +10,12 @@ public int search(int[] nums, int target) {
 	boolean rotated = nums[0] > nums[n-1];
 	int left=0;
 	int right= n-1;
-	boolean foundBound = false;
 	if(target == nums[left])
-			return left;
+		return left;
 	else if(target == nums[right])
 		return right;
-	else if(rotated && target < nums[0]) {
-		while(!foundBound) {
+	else if(rotated ){
+		while(true) {
 			int avgIndex = (left+right)/2;
 			int backoffIndex=((2*left- right) + left)/2;
 			printBounds(left, right, avgIndex, backoffIndex);
@@ -24,6 +23,7 @@ int 			leftElem = nums[left];
 int rightElem = nums[right];
 int avgElem 		= nums[avgIndex];
 printElems(leftElem, rightElem, avgElem);
+if(target < nums[0]) {
 			if(leftElem <=target ) {
 				P.t("Found bound at index", left);
 				break;
@@ -36,8 +36,10 @@ printElems(leftElem, rightElem, avgElem);
 		} else {
 			left = avgIndex;
 		}
+}
+}
 			}
-	}
+	
 	if(left == -1)
 		return -1;
 
