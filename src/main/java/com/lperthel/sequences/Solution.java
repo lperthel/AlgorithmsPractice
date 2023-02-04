@@ -17,15 +17,14 @@ public int search(int[] nums, int target) {
 	else if(rotated ){
 		while(true) {
 			int avgIndex = (left+right)/2;
-			int backoffIndex=((2*left- right) + left)/2;
-			printBounds(left, right, avgIndex, backoffIndex);
 int 			leftElem = nums[left];
 int rightElem = nums[right];
-int avgElem 		= nums[avgIndex];
-printElems(leftElem, rightElem, avgElem);
 if(target < nums[0]) {
+	int backoffIndex=((2*left- right) + left)/2;
+	printBounds(left, right, avgIndex, backoffIndex);
+	printElems(leftElem, rightElem);
 			if(leftElem <=target ) {
-				P.t("Found bound at index", left);
+				P.t("Found left bound at index", left);
 				break;
 			}else if(leftElem >rightElem && nums[left+1] > target && nums[left+1] < rightElem) {
 				P.t("target does not exist");
@@ -33,25 +32,35 @@ if(target < nums[0]) {
 				break;
 			}else if(leftElem < nums[0] ) {
 					left = backoffIndex;
-		} else {
+		} else 
 			left = avgIndex;
-		}
+}else{
+	int backoffIndex=(2*right- left + right)/2;
+	printBounds(left, right, avgIndex, backoffIndex);
+				printElems(leftElem, rightElem);
+				if(rightElem>=target ) {
+					P.t("Found right bound at index", right);
+					break;
+} else if(rightElem > nums[n-1]){
+	right = backoffIndex;
+} else {
+	right = avgIndex;
 }
+			}
 }
 			}
 	
 	if(left == -1)
 		return -1;
 
-	int binarySearchResult = Arrays.binarySearch(nums,left, right,target);
+	int binarySearchResult = Arrays.binarySearch(nums,left, right+1,target);
 	if(binarySearchResult < 0)
 		binarySearchResult = -1;
 	return binarySearchResult;
 }
-private void printElems(int leftElem, int rightElem, int avgElem) {
+private void printElems(int leftElem, int rightElem) {
 	P.t("leftElem = ", leftElem );
 				P.t("rightElem = ", rightElem );
-				P.t("avgElem 		= ", avgElem 		);
 }
 private void printBounds(int left, int right, int avgIndex, int backoffIndex) {
 	P.t("left= ", left);
