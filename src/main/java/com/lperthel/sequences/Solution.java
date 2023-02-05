@@ -31,12 +31,14 @@ public class Solution {
 	}
 
 public int search(int[] nums, int target) {
+	int i = 0;
 	P.t("nums= ", Arrays.toString(nums));
 	P.t("target= ", target);
 	int n = nums.length;
 	boolean rotated = nums[0] > nums[n-1];
 	int left=0;
 	int right= n-1;
+	
 	if(target == nums[left])
 		return left;
 	else if(target == nums[right])
@@ -44,15 +46,16 @@ public int search(int[] nums, int target) {
 //	else if(target< nums[0] && target> nums[n-1])
 //		return -1;
 	else if(rotated ){
-		int i = 0;
-		while(i<15) {
-//			while(true) {
+		
+//		while(i<15) {
+			while(true) {
 			P.t("i =", i);
 			i++;
 			int avgIndex = (left+right)/2;
 int 			leftElem = nums[left];
 int rightElem = nums[right];
 if(target < nums[0]) {
+	P.t("branch a");;
 	int backoffIndex=(2*left- right + left)/2;
 	printBounds(left, right, avgIndex, backoffIndex);
 	printElems(leftElem, rightElem);
@@ -65,11 +68,12 @@ if(target < nums[0]) {
 				break;
 			}else if(leftElem < nums[0] ) {
 				P.t("backing off");	
-				left = backoffIndex;
+				left = backoffIndex-1;
 		} else 
-			left = avgIndex;
+			left = avgIndex+1;
 			P.t("increasing avgIndex");
 }else{
+	P.t("branchba");;
 	int backoffIndex=(2*right- left + right)/2;
 	printBounds(left, right, avgIndex, backoffIndex);
 				printElems(leftElem, rightElem);
@@ -82,9 +86,11 @@ if(target < nums[0]) {
 	break;
 
 }else if(rightElem > nums[n-1]){
-	right = backoffIndex;
+	right = backoffIndex+1;
+	P.t("backing off");
 } else {
-	right = avgIndex;
+	right = avgIndex-1;
+	P.t("increasing right index to avgIndex");
 }
 			}
 }
@@ -92,7 +98,8 @@ if(target < nums[0]) {
 	
 	if(left == -1)
 		return -1;
-
+if(i>15)
+	throw new RuntimeException("inf loop detected");
 	int binarySearchResult = Arrays.binarySearch(nums,left, right+1,target);
 	if(binarySearchResult < 0)
 		binarySearchResult = -1;
