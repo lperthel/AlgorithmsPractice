@@ -41,10 +41,12 @@ public int search(int[] nums, int target) {
 		return left;
 	else if(target == nums[right])
 		return right;
-	else if(target< nums[0] && target> nums[n-1])
-		return -1;
+//	else if(target< nums[0] && target> nums[n-1])
+//		return -1;
 	else if(rotated ){
-		while(true) {
+		int i = 0;
+		while(i<15) {
+			i++;
 			int avgIndex = (left+right)/2;
 int 			leftElem = nums[left];
 int rightElem = nums[right];
