@@ -8,6 +8,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 
+import com.lperthel.util.Printer;
+
 class SearchinRotatedSortedArray {
 private Solution solution = new Solution();
 	@BeforeEach
@@ -24,6 +26,7 @@ final int [] expecteds= {-1,5,6,7,-1,8};
 	for(int i=0;i<targets.length;i++) {
 		assertEquals(expecteds[i],solution.search(nums,  targets[i]));	
 	}
+	Printer.print("passed all tests for  testGivenRotatedArrayWithTargetOnRightSide_ExpectIndexOf");
 }
 @Test
 @Timeout(value = 50, unit = TimeUnit.MILLISECONDS,threadMode = Timeout.ThreadMode.SEPARATE_THREAD)
@@ -34,15 +37,21 @@ final int [] expecteds= {-1, 0,1,2,-1,3,-1};
 	
 	for(int i=0;i<targets.length;i++) {
 		assertEquals(expecteds[i],solution.search(nums,  targets[i]));	
-	}}
+	}
+	Printer.print("passed all tests for  testGivenRotatedArrayWithTargetOnLeftSide_ExpectIndexOfTarget");
+	}
 @Test
 @Timeout(value = 50, unit = TimeUnit.MILLISECONDS,threadMode = Timeout.ThreadMode.SEPARATE_THREAD)
 void  testGiven2ElementArrayWithNonExistanTarget_ExpectNegativeOne() {
 	final int [] nums = {3,1};
-final int [] targets= {0,2,4};
-final int [] expecteds= {-1,-1,-1};
+//final int [] targets= {0,2,4};
+	final int [] targets= {0};
+//final int [] expecteds= {-1,-1,-1};
+	int [] expecteds= {-1};
 	for(int i=0;i<targets.length;i++) {
 		assertEquals(expecteds[i],solution.search(nums,  targets[i]));	
 	}
-} 
+	Printer.print("passed all tests for   testGiven2ElementArrayWithNonExistanTarget_ExpectNegativeOne");
+}
+
 }

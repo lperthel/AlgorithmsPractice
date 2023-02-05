@@ -3,6 +3,23 @@ package com.lperthel.sequences;
 import java.util.Arrays;
 
 public class Solution {
+	protected static class P{
+		 public static void t(Object... args){
+
+			 for(Object elem:args) {		
+		 		System.out.print(elem+ " ");
+		 	}
+		 	System.out.println();
+		 }
+		 public static void t(Object str, Object[]... args){
+			 System.out.print(str);
+			 for(Object elem:args) {		
+		 		System.out.print(elem+ " ");
+		 	}
+		 	System.out.println();
+		 }
+	}
+
 public int search(int[] nums, int target) {
 	P.t("nums= ", Arrays.toString(nums));
 	P.t("target= ", target);
@@ -14,6 +31,8 @@ public int search(int[] nums, int target) {
 		return left;
 	else if(target == nums[right])
 		return right;
+	else if(target< nums[0] && target> nums[n-1])
+		return -1;
 	else if(rotated ){
 		while(true) {
 			int avgIndex = (left+right)/2;
@@ -21,8 +40,6 @@ int 			leftElem = nums[left];
 int rightElem = nums[right];
 if(target < nums[0]) {
 	int backoffIndex=((2*left- right) + left)/2;
-	printBounds(left, right, avgIndex, backoffIndex);
-	printElems(leftElem, rightElem);
 			if(leftElem <=target ) {
 				P.t("Found left bound at index", left);
 				break;
@@ -73,21 +90,5 @@ private void printBounds(int left, int right, int avgIndex, int backoffIndex) {
 	P.t("avgIndex= ", avgIndex);
 	P.t("backoffIndex= ", backoffIndex);		;
 }
-protected static class P{
-	 public static void t(Object... args){
 
-		 for(Object elem:args) {		
-	 		System.out.print(elem+ " ");
-	 	}
-	 	System.out.println();
-	 }
-	 public static void t(Object str, Object[]... args){
-		 System.out.print(str);
-		 for(Object elem:args) {		
-	 		System.out.print(elem+ " ");
-	 	}
-	 	System.out.println();
-	 }
 }
-}
-
