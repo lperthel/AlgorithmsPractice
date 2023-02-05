@@ -19,6 +19,16 @@ public class Solution {
 		 	System.out.println();
 		 }
 	}
+	private void printElems(int leftElem, int rightElem) {
+		P.t("leftElem = ", leftElem );
+					P.t("rightElem = ", rightElem );
+	}
+	private void printBounds(int left, int right, int avgIndex, int backoffIndex) {
+		P.t("left= ", left);
+		P.t("right= ", right);
+		P.t("avgIndex= ", avgIndex);
+		P.t("backoffIndex= ", backoffIndex);		;
+	}
 
 public int search(int[] nums, int target) {
 	P.t("nums= ", Arrays.toString(nums));
@@ -79,16 +89,6 @@ if(target < nums[0]) {
 	if(binarySearchResult < 0)
 		binarySearchResult = -1;
 	return binarySearchResult;
-}
-private void printElems(int leftElem, int rightElem) {
-	P.t("leftElem = ", leftElem );
-				P.t("rightElem = ", rightElem );
-}
-private void printBounds(int left, int right, int avgIndex, int backoffIndex) {
-	P.t("left= ", left);
-	P.t("right= ", right);
-	P.t("avgIndex= ", avgIndex);
-	P.t("backoffIndex= ", backoffIndex);		;
 }
 
 }
