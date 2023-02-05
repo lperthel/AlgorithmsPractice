@@ -46,23 +46,29 @@ public int search(int[] nums, int target) {
 	else if(rotated ){
 		int i = 0;
 		while(i<15) {
+//			while(true) {
+			P.t("i =", i);
 			i++;
 			int avgIndex = (left+right)/2;
 int 			leftElem = nums[left];
 int rightElem = nums[right];
 if(target < nums[0]) {
-	int backoffIndex=((2*left- right) + left)/2;
+	int backoffIndex=(2*left- right + left)/2;
+	printBounds(left, right, avgIndex, backoffIndex);
+	printElems(leftElem, rightElem);
 			if(leftElem <=target ) {
 				P.t("Found left bound at index", left);
 				break;
-			}else if(leftElem >rightElem && nums[left+1] > target && nums[left+1] < rightElem) {
+			}else if(leftElem >rightElem && nums[left+1] > target && nums[left+1] <= rightElem) {
 				P.t("target does not exist");
 				left = -1;
 				break;
 			}else if(leftElem < nums[0] ) {
-					left = backoffIndex;
+				P.t("backing off");	
+				left = backoffIndex;
 		} else 
 			left = avgIndex;
+			P.t("increasing avgIndex");
 }else{
 	int backoffIndex=(2*right- left + right)/2;
 	printBounds(left, right, avgIndex, backoffIndex);
