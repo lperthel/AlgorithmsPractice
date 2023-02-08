@@ -10,19 +10,13 @@ public int search(int[] nums, int target) {
 	int left=0;
 	int right= n-1;
 	
-	if(target == nums[left])
-		return left;
-	else if(target == nums[right])
-		return right;
-//	else if(target< nums[0] && target> nums[n-1])
 //		return -1;
-	else if(rotated ){
-//		while(i<15) {
+	if(rotated ){
 			while(true) {
 			int avgIndex = (left+right)/2;
 int 			leftElem = nums[left];
 int rightElem = nums[right];
-if(target < nums[0]) {
+if(target <= nums[n-1]) {
 	int backoffIndex=(2*left- right + left)/2;
 			if(leftElem <=target ) {
 				break;
@@ -37,7 +31,7 @@ if(target < nums[0]) {
 	int backoffIndex=(2*right- left + right)/2;
 				if(rightElem>=target ) {
 					break;
-} else if(leftElem<rightElem && nums[right+1] < target && nums[right+1]<rightElem) {
+} else if(leftElem<rightElem && nums[right+1]<= nums[n-1]) {
 	left = -1;
 	break;
 }else if(rightElem > nums[n-1]){
