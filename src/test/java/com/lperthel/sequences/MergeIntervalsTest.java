@@ -7,8 +7,6 @@ import java.util.Arrays;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.lperthel.util.Printer;
-
 class MergeIntervalsTest {
 	private MergeIntervals mergeIntervals = new MergeIntervals();
 private 	int[][]  actual;
