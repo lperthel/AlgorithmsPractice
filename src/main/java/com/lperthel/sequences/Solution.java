@@ -6,49 +6,30 @@ public class Solution {
 	
 public int search(int[] nums, int target) {
 	int n = nums.length;
-	boolean rotated = nums[0] > nums[n-1];
 	int left=0;
 	int right= n-1;
-	
-//		return -1;
-	if(rotated ){
-			while(true) {
-			int avgIndex = (left+right)/2;
-int 			leftElem = nums[left];
-int rightElem = nums[right];
-if(target <= nums[n-1]) {
-	int backoffIndex=(2*left- right + left)/2;
-			if(leftElem <=target ) {
-				break;
-			}else if(leftElem >rightElem && nums[left+1] > target && nums[left+1] <= rightElem) {
-				left = -1;
-				break;
-			}else if(leftElem < nums[0] ) {
-				left = backoffIndex-1;
-		} else 
-			left = avgIndex+1;
-}else{
-	int backoffIndex=(2*right- left + right)/2;
-				if(rightElem>=target ) {
-					break;
-} else if(leftElem<rightElem && nums[right+1]<= nums[n-1]) {
-	left = -1;
-	break;
-}else if(rightElem > nums[n-1]){
-	right = backoffIndex+1;
-} else {
-	right = avgIndex-1;
-}
-			}
-}
-			}
-	
-	if(left == -1)
-		return -1;
+	int pivot ;
+	if(nums[0] > nums[n-1]){
+		pivot =findPivot(left,right,nums);
+		int binarySearchResultLeft = Arrays.binarySearch(nums,0, pivot+1,target);
+		int binarySearchResultRight = Arrays.binarySearch(nums,pivot+1, n,target);
+		binarySearchResultLeft  = Math.max(-1, binarySearchResultLeft );
+return Math.max(binarySearchResultLeft, binarySearchResultRight);
+	}
 	int binarySearchResult = Arrays.binarySearch(nums,left, right+1,target);
-	if(binarySearchResult < 0)
 		binarySearchResult = -1;
-	return binarySearchResult;
+	return Math.max(-1, binarySearchResult);
 }
-
+private int findPivot(int left, int right, int[] nums) {
+	int mid= (left+right)/2;
+	int 			leftElem = nums[left];
+	int rightElem = nums[right];
+	if(nums[mid]>nums[mid+1])
+		return mid;
+	else if(nums[mid]<nums[mid-1])return mid-1;
+	else if(nums[left] < nums[mid])
+		return findPivot(mid+1,right,nums);
+	else
+		return findPivot(left,mid-1,nums);
+}
 }
