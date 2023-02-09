@@ -17,13 +17,10 @@ public int search(int[] nums, int target) {
 return Math.max(binarySearchResultLeft, binarySearchResultRight);
 	}
 	int binarySearchResult = Arrays.binarySearch(nums,left, right+1,target);
-		binarySearchResult = -1;
 	return Math.max(-1, binarySearchResult);
 }
 private int findPivot(int left, int right, int[] nums) {
 	int mid= (left+right)/2;
-	int 			leftElem = nums[left];
-	int rightElem = nums[right];
 	if(nums[mid]>nums[mid+1])
 		return mid;
 	else if(nums[mid]<nums[mid-1])return mid-1;
