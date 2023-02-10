@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 
 class SearchinRotatedSortedArray {
-private Solution solution = new Solution();
+private SearchInRotatedSortedArray searchInRotatedSortedArray = new SearchInRotatedSortedArray();
 @Test
 @Timeout(value = 1, unit = TimeUnit.SECONDS)
 void testGivenRotatedArrayWithTargetOnRightSide_ExpectIndexOfTarget() {
@@ -17,7 +17,7 @@ final int [] targets= {-1,0,1,2,3,4};
 final int [] expecteds= {-1,5,6,7,-1,8};
 	
 	for(int i=0;i<targets.length;i++) {
-		assertEquals(expecteds[i],solution.search(nums,  targets[i]));	
+		assertEquals(expecteds[i],searchInRotatedSortedArray.search(nums,  targets[i]));	
 	}
 }
 @Test
@@ -27,7 +27,7 @@ void testGivenRotatedArrayWithTargetOnLeftSide_ExpectIndexOfTarget() {
 final int [] targets= {4,5,6,7,8,9,10};
 final int [] expecteds= {-1, 0,1,2,-1,3,-1};
 	for(int i=0;i<targets.length;i++) {
-		assertEquals(expecteds[i],solution.search(nums,  targets[i]));	
+		assertEquals(expecteds[i],searchInRotatedSortedArray.search(nums,  targets[i]));	
 	}
 	}
 @Test
@@ -37,7 +37,7 @@ void  testGiven2ElementArrayWithNonExistanTarget_ExpectNegativeOne() {
 	final int [] targets= {3,1,0,2,4};
 	int [] expecteds= {0,1,-1,-1,-1};
 	for(int i=0;i<targets.length;i++) {
-		assertEquals(expecteds[i],solution.search(nums,  targets[i]));	
+		assertEquals(expecteds[i],searchInRotatedSortedArray.search(nums,  targets[i]));	
 	}
 }
 @Test
@@ -47,7 +47,7 @@ void  test_GivenSingleElementArray_ExpectToOnlyFindSingleElement() {
 	final int [] targets= {1,0,2};
 	int [] expecteds= {0,-1,-1,};
 	for(int i=0;i<targets.length;i++) {
-		assertEquals(expecteds[i],solution.search(nums,  targets[i]));	
+		assertEquals(expecteds[i],searchInRotatedSortedArray.search(nums,  targets[i]));	
 	}
 }
 

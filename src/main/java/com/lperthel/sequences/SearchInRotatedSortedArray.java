@@ -2,7 +2,7 @@ package com.lperthel.sequences;
 
 import java.util.Arrays;
 
-public class Solution {
+public class SearchInRotatedSortedArray {
 	
 public int search(int[] nums, int target) {
 	int n = nums.length;
