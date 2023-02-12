@@ -1,6 +1,6 @@
 package com.lperthel.datastructures;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,8 +12,9 @@ private Solution solution = new Solution();
 	}
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void test_GivenTwoElementLL_ExpectedReverseLL() {
+//		ListNode twoElemnListNode List = ListNode.generateList)1,2;
+fail();		
 	}
 
 }

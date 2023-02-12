@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 
-class SearchinRotatedSortedArray {
+class SearchinRotatedSortedArrayTest {
 private SearchInRotatedSortedArray searchInRotatedSortedArray = new SearchInRotatedSortedArray();
 @Test
 @Timeout(value = 1, unit = TimeUnit.SECONDS)

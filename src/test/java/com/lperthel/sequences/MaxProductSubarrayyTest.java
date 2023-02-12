@@ -33,7 +33,7 @@ public class MaxProductSubarrayyTest {
 		assertEquals(expectedIndex,actualIndex);
 	}
 	
-	@Test
+	@	Test
 	public void testGivenSingleElementArrayExpectSingleElement() {
 		final int[] singleElementArray = {2};
 		final int[] singleZeroElementArray = {0};
