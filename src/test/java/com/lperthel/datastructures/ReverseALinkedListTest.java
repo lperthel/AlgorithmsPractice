@@ -8,7 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class ReverseALinkedListTest {
-private Solution solution = new Solution();
+private ReverseLinkedList reverseLinkedList = new ReverseLinkedList();
 	@BeforeEach
 	void setUp() throws Exception {
 	}
@@ -16,14 +16,14 @@ private Solution solution = new Solution();
 	void test_GivenArrayOfNums_ExpectReversedPrintedListOfNodes() {
 ListNode[] input = ListNode.generateList(1,2,3,4,5)	;
 String expected = "[5,4,3,2,1]";
-ListNode reverse= solution.reverseList(input [0]);
+ListNode reverse= reverseLinkedList.reverseList(input [0]);
 String actual = ListNode.printList(reverse);
 
 assertEquals(expected,actual);
 	}
 	@Test
 	void test_GivenNullExpectNull() {
-ListNode nullList= solution.reverseList(null);
+ListNode nullList= reverseLinkedList.reverseList(null);
 assertNull(nullList);
 	}
 
