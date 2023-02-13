@@ -1,7 +1,7 @@
 package com.lperthel.datastructures;
 class Solution {
     public ListNode reverseList(ListNode head) {
-    	if(head.next == null)
+    	if(head== null || head.next == null)
 return head;
 ListNode nextNode = head.next;
 ListNode tail = reverseList(nextNode);
