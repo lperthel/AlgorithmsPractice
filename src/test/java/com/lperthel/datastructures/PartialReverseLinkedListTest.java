@@ -29,4 +29,16 @@ String actual = ListNode.printList(reverse);
 
 assertEquals(expected,actual);
 	}
+	@Test
+	void test_GivenArrayOfNums_ExpectReversedFrontSectionOfList() {
+int left =1;
+		ListNode[] input = ListNode.generateList(1,2,3);
+		int right = 2;
+String expected = "[2,1,3]";
+ListNode reverse= partialReverseLinkedList.reverseBetween(input [0],left,right);
+String actual = ListNode.printList(reverse);
+
+assertEquals(expected,actual);
+	}
+
 }

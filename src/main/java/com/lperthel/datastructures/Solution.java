@@ -15,7 +15,6 @@ public class Solution {
     			if(tail != head.next)
     				head.next.next = reverseListEnd;
     			head.next = tail;
-    		
     		}
     			return head;
     	}
