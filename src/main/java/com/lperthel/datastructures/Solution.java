@@ -11,6 +11,12 @@ xx * Definition for singly-linked list.
  */
 class Solution {
     public ListNode reverseList(ListNode head) {
-        return null;
+    	if(head.next == null)
+return head;
+ListNode nextNode = head.next;
+ListNode tail = reverseList(nextNode);
+nextNode.next = head;
+head.next = null;
+return tail;
     }
 }

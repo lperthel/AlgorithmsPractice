@@ -1,6 +1,8 @@
 package com.lperthel.datastructures;
 
+import lombok.ToString;
 
+@ToString
 public class ListNode {
  int val;
      ListNode next;
@@ -18,17 +20,7 @@ public class ListNode {
     	}
     	return nodes;
      }
-     static ListNode[]  reverseList(ListNode[] nodes) {
-    	 ListNode[] revNodes = new ListNode[nodes.length];
-    	
-    	for(int i=0;i<nodes.length ;i++) {
-    		if(i== 0)
-    			nodes[i].next =null;
-    		else
-    		nodes[i].next = nodes[i-1];
-    	}
-    	return nodes;
-     }
+     
 static String printList(ListNode node) {
 	  StringBuilder nodesToString = new StringBuilder("[");
 	  while(node!=null) {
