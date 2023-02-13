@@ -9,11 +9,10 @@ class PartialReverseLinkedListTest {
 	private Solution partialReverseLinkedList = new Solution();
 	@Test
 	void test_GivenArrayOfNums_ExpectReversedPrintedListOfNodes() {
-
-int left =2;
-		ListNode[] input = ListNode.generateList(1,2,3,4);
-		int right = 4;
-String expected = "[1,4,3,2]";
+int left =3;
+		ListNode[] input = ListNode.generateList(0,1,2,3,4,5);
+		int right = 5;
+String expected = "[0,1,4,3,2,5]";
 ListNode reverse= partialReverseLinkedList.reverseBetween(input [0],left,right);
 String actual = ListNode.printList(reverse);
 
