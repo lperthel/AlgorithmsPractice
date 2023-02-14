@@ -13,7 +13,6 @@ public class Solution {
     		ListNode tail = reverseBetween(head.next,left-1,right-1);
     		{
     			if(tail != head.next)
-    				head.next.next = reverseListEnd;
     			head.next = tail;
     		}
     			return head;
@@ -21,8 +20,12 @@ public class Solution {
     	else {
     		ListNode nextNode = head.next;
     	
-    		ListNode tail = reverseBetween(nextNode,left,right-1);
+    		ListNode tail = reverseBetween(nextNode,left-1,right-1);
     		nextNode.next = head;
+    		if(left == 1) 
+    			head.next = reverseListEnd;
+    		
+    		else
     		head.next = null;
     		return tail;}
     		    }
