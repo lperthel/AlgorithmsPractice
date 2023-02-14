@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class PartialReverseLinkedListTest {
+class PartiallyReverseLinkedListTest {
 	private PartiallyReversedLinkedList partialReverseLinkedList = new PartiallyReversedLinkedList();
 	@Test
 	void test_GivenArrayOfNums_ExpectPartiallyReversedPrintedListOfNodes() {
