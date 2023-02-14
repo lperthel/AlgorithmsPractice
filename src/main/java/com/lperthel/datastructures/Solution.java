@@ -6,7 +6,7 @@ public class Solution {
 	public ListNode removeNthFromEnd(ListNode head, int n) {
 		ListNode dummy = new ListNode();
 		dummy.next = head;
-removeNthFromEndHelper(head,n);
+removeNthFromEndHelper(dummy,n);
 return dummy.next;
 	 
 	}
