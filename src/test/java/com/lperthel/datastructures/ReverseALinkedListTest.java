@@ -9,9 +9,6 @@ import org.junit.jupiter.api.Test;
 
 class ReverseALinkedListTest {
 private ReverseLinkedList reverseLinkedList = new ReverseLinkedList();
-	@BeforeEach
-	void setUp() throws Exception {
-	}
 	@Test
 	void test_GivenArrayOfNums_ExpectReversedPrintedListOfNodes() {
 ListNode[] input = ListNode.generateList(1,2,3,4,5)	;

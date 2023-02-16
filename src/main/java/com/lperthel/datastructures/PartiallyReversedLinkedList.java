@@ -1,6 +1,6 @@
 package com.lperthel.datastructures;
 
-public class Solution {
+public class PartiallyReversedLinkedList {
 
 	private ListNode reverseListEnd;
 
