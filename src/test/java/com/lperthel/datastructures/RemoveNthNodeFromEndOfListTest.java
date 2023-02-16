@@ -9,7 +9,6 @@ private RemoveNthNodeFromEndOfList removeNthNodeFromEndOfList = new RemoveNthNod
 	
 	@Test
 	void test_GivenOneElemntListExpectNull() {
-		
 ListNode oneElementList=(ListNode.generateList(1))[0]; 
 assertNull(removeNthNodeFromEndOfList.removeNthFromEnd(oneElementList,1));
 	}
