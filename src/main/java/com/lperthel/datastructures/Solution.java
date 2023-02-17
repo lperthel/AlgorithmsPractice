@@ -3,8 +3,14 @@ package com.lperthel.datastructures;
 public class Solution {
 
 public boolean hasCycle(ListNode head) {
- if(head.next == null)
-	 return false;
-	return true;       
+	ListNode scout = head.next;
+	while(head!=scout && head!=null && scout!=null && scout.next!=null) {
+		head= head.next;
+		scout=scout.next.next;
+	}
+	if(head ==scout)
+		return true;
+	else
+		return false;
     }
 }
