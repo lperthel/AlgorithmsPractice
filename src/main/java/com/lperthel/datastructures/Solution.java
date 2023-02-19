@@ -4,10 +4,12 @@ public class Solution {
 	public ListNode detectCycle(ListNode head) {
 		if(head == null)
 			return null;
-ListNode hare= hasCycle(head);		
+ListNode dummy = new ListNode();
+		ListNode hare= hasCycle(head);		
 if(hare== null)
 	return null;
-return findIntersection(head,hare);
+dummy.next = head;
+return findIntersection(dummy,hare);
 	}
 	public ListNode hasCycle(ListNode head) {
 		ListNode scout = head.next;
