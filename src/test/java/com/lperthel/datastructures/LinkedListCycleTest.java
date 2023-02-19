@@ -9,17 +9,17 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 
 class LinkedListCycleTest {
-private Solution solution = new Solution(); 
+private LinkedListCycle linkedListCycle = new LinkedListCycle(); 
 	@Test
 	void test_GivenOneElemntListExpectFalse () {
 ListNode oneElementList=(ListNode.generateList(1))[0]; 
-assertFalse(solution.hasCycle(oneElementList));
+assertFalse(linkedListCycle.hasCycle(oneElementList));
 	}
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void  test_Given4ElementListWithCycle_ExpectTrue() {
 		ListNode[] input = ListNode.generateList(1,2,3,4,5);
 		input[3].next = input[1];
-		assertTrue(solution.hasCycle(input[0]));
+		assertTrue(linkedListCycle.hasCycle(input[0]));
 }
 }
