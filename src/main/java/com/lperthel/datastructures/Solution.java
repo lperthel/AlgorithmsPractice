@@ -1,32 +1,20 @@
 package com.lperthel.datastructures;
 
 public class Solution {
-	public ListNode detectCycle(ListNode head) {
-		if(head == null)
-			return null;
-ListNode dummy = new ListNode();
-		ListNode hare= hasCycle(head);		
-if(hare== null)
-	return null;
-dummy.next = head;
-return findIntersection(dummy,hare);
-	}
-	public ListNode hasCycle(ListNode head) {
-		ListNode scout = head.next;
-		while(head!=scout && head!=null && scout!=null && scout.next!=null) {
-			head= head.next;
-			scout=scout.next.next;
-		}
-		if(head ==scout)
-			return scout;
+public int maxArea(int[] height) {
+	int left = 0,right = height.length -1, max = 0;
+	while(right >left) {
+		int area = calcArea(height, left, right);		
+		max = Math.max(area,max);
+		if(height[left] >height[right])
+			right--;
 		else
-			return null;
+			left++;
 	}
-    private ListNode findIntersection(ListNode tortoise, ListNode hare) {
-    	while(hare != tortoise) {
-    		tortoise = tortoise.next;
-    		hare = hare.next;
-    	}
-    	return tortoise;
-	}
-	}
+	return max;
+}
+
+private int calcArea(int[] height, int left, int right) {
+	return Math.min(height[right],height[left]) * (right-left);
+}
+}
