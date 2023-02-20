@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 
 class LinkedListCycleIITest {
-private Solution linkedListCycle = new Solution(); 
+private LinkedListCycleII linkedListCycle = new LinkedListCycleII(); 
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void test_GivenOneElemntListExpectNull () {
