@@ -13,5 +13,12 @@ private Solution solution = new Solution();
 		int actual = solution.lengthOfLongestSubstring(input);
 		assertEquals(expected,actual);
 	}
+	@Test
+	void test_GivenSingleRepeatingCharacter_ExpectLengthOne() {
+		String input = "bbbbb";
+		int expected = 1;
+		int actual = solution.lengthOfLongestSubstring(input);
+		assertEquals(expected,actual);
+	}
 
 }
