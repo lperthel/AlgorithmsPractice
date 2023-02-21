@@ -28,5 +28,12 @@ private Solution solution = new Solution();
 		int actual = solution.lengthOfLongestSubstring(input);
 		assertEquals(expected,actual);
 	}
-
+//"abba"
+	@Test
+	void test_GivenStringWithsameFirstAndLastCharacter_ExpectAnswerThatIncrementsWindowCorrectly() {
+		String input = "abba";
+		int expected = 2;
+		int actual = solution.lengthOfLongestSubstring(input);
+		assertEquals(expected,actual);
+	}
 }

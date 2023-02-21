@@ -1,26 +1,21 @@
 package com.lperthel.datastructures;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.HashMap;
+import java.util.Map;
 
 class Solution {
     public int lengthOfLongestSubstring(String s) {
     	if(s == null || s.length() == 0)
     		return 0;
-    	int left=0, right= 0, longest= 0;
-    	Set<Character> uniqueChars = new HashSet<>();
-    	while(right<s.length()) {
-    		if(!uniqueChars.contains(s.charAt(right))) {
-    			uniqueChars.add(s.charAt(right));
-    			longest = (right - left+1) > longest ? (right - left +1) : longest;
-    			right++;
-    		} else {
-    			while(uniqueChars.contains(s.charAt(right))) {
-    				uniqueChars.remove(s.charAt(left));
-    				left++;
-    			}
+    	int longest= 0;
+    	Map<Character,Integer> map = new HashMap<>();
+    	for(int i=0, j=0; j<s.length();j++) {
+    		if(map.containsKey(s.charAt(j))) {
+    			i =  Math.max(i, map.get(s.charAt(j)));
     		}
+    		longest= Math.max(longest, j-i+1);
+    		map.put(s.charAt(j), j+1);
     	}
-    	return longest;
+    	   	return longest;
     }
 }
