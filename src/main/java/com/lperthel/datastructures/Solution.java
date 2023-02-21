@@ -1,20 +1,25 @@
 package com.lperthel.datastructures;
 
 public class Solution {
-public int maxArea(int[] height) {
-	int left = 0,right = height.length -1, max = 0;
-	while(right >left) {
-		int area = calcArea(height, left, right);		
-		max = Math.max(area,max);
-		if(height[left] >height[right])
-			right--;
-		else
-			left++;
+	public int trap(int[] height) {
+		int left = 0, right = height.length-1;
+		int leftMax = 0, rightMax =0, area = 0;
+		while(left<right) {
+			if(height[left] < height[right]) {
+				if(height[left] < leftMax) 
+					area+= (leftMax- height[left]);
+				else
+				leftMax= height[left];
+				left++;
+			} else {
+				if(height[right] < rightMax)
+					area+= (rightMax - height[right]);
+				else
+					rightMax=height[right];
+				right--;
+					
+			}
+		}
+		return area;
 	}
-	return max;
-}
-
-private int calcArea(int[] height, int left, int right) {
-	return Math.min(height[right],height[left]) * (right-left);
-}
 }
