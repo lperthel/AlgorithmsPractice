@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-class TrappingRainWater {
+class TrappingRainWaterTest {
 private Solution  solution = new Solution ();
 	@Test
 	void test_GivenVariableHeightTerran_ExpectAreaOfRain() {
