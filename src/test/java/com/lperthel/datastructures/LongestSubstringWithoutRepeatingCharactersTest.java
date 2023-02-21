@@ -14,6 +14,14 @@ private Solution solution = new Solution();
 		assertEquals(expected,actual);
 	}
 	@Test
+	void test_GivenStringWithLongestSubstringLengthThreeAndFourUniqueChars_ExpectThree() {
+		String input = "pwwkew";
+		int expected = 3;
+		int actual = solution.lengthOfLongestSubstring(input);
+		assertEquals(expected,actual);
+	}
+	
+	@Test
 	void test_GivenSingleRepeatingCharacter_ExpectLengthOne() {
 		String input = "bbbbb";
 		int expected = 1;
