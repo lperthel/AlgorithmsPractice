@@ -5,7 +5,7 @@ import java.util.Set;
 
 class Solution {
     public int lengthOfLongestSubstring(String s) {
-    	if(s == null || s.length == 0)
+    	if(s == null || s.length() == 0)
     		return 0;
     	int left=0, right= 0, longest= 0;
     	Set<Character> uniqueChars = new HashSet<>();
