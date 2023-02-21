@@ -1,25 +1,21 @@
 package com.lperthel.datastructures;
 
-public class Solution {
-	public int trap(int[] height) {
-		int left = 0, right = height.length-1;
-		int leftMax = 0, rightMax =0, area = 0;
-		while(left<right) {
-			if(height[left] < height[right]) {
-				if(height[left] < leftMax) 
-					area+= (leftMax- height[left]);
-				else
-				leftMax= height[left];
-				left++;
-			} else {
-				if(height[right] < rightMax)
-					area+= (rightMax - height[right]);
-				else
-					rightMax=height[right];
-				right--;
-					
-			}
-		}
-		return area;
-	}
+import java.util.HashMap;
+import java.util.Map;
+
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+    	if(s == null || s.length() == 0)
+    		return 0;
+    	int longest= 0;
+    	Map<Character,Integer> map = new HashMap<>();
+    	for(int i=0, j=0; j<s.length();j++) {
+    		if(map.containsKey(s.charAt(j))) {
+    			i =  Math.max(i, map.get(s.charAt(j)));
+    		}
+    		longest= Math.max(longest, j-i+1);
+    		map.put(s.charAt(j), j+1);
+    	}
+    	   	return longest;
+    }
 }
