@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 class LongestSubstringWithoutRepeatingCharactersTest {
-private Solution solution = new Solution();
+private LongestSubstringWithoutRepeatingCharacters solution = new LongestSubstringWithoutRepeatingCharacters();
 	@Test
 	void test_GivenStringWithLongestSubstringLengthThree_ExpectThree() {
 		String input = "abcabcbb";
