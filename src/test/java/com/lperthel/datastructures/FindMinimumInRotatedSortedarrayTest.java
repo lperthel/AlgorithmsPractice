@@ -9,6 +9,27 @@ import org.junit.jupiter.api.Timeout;
 
 class FindMinimumInRotatedSortedarrayTest {
 	private Solution searchInRotatedSortedArray = new Solution();
+	void testvGivenArrayWithMinInMiddle_ExpectMiddleElement() {
+		final int [] nums = {3,1,2};
+		int expected = 1;
+			assertEquals(expected,searchInRotatedSortedArray.findMin(nums));	
+	}
+	@Test
+	@Timeout(value = 1, unit = TimeUnit.SECONDS)
+	void testGivenTwoElementUnrotatedArray_ExpectFirstElement() {
+		final int [] nums = {1,2};
+		int expected = 1;
+			assertEquals(expected,searchInRotatedSortedArray.findMin(nums));	
+	}
+
+	@Test
+	@Timeout(value = 1, unit = TimeUnit.SECONDS)
+	void testGivenUnrotatedArray_ExpectFirstElement() {
+		final int [] nums = {11,13,15,17};
+		int expected = 11;
+			assertEquals(expected,searchInRotatedSortedArray.findMin(nums));	
+	}
+
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void testGivenRotatedArrayWithTargetOnRightSide_ExpectIndexOfTarget() {
