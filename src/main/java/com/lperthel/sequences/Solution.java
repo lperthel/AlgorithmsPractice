@@ -1,16 +1,17 @@
 package com.lperthel.sequences;
 
-public class Solution {
-public int [] runningSum(int[] nums) {
-int[]  sum = new int[nums.length];
+import java.util.Arrays;
+
+class Solution {
+    public int pivotIndex(int[] nums) {
+int rightSum =Arrays.stream(nums).sum();
+int leftSum = 0;
 for(int i = 0;i<nums.length;i++) {
-	if(i == 0)
-		sum[0] = nums[0];
-	else{
-		sum[i] = sum[i-1] +nums[i];
-	}
-	
+	leftSum += nums[i];
+	if(leftSum == rightSum)
+		return i;
+	else rightSum -= nums[i];
 }
-return sum;
-}
+    	return -1;        
+    }
 }
