@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 class IsSubsequenceTest {
-private Solution solution = new Solution();
+private IsSubsequence solution = new IsSubsequence();
 	@Test
 	void test_GivenSubsequenceString_ExpectTrue() {
 		String t = "abcde";
