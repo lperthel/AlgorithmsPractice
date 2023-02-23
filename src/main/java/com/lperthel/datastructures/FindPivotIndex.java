@@ -1,6 +1,6 @@
 package com.lperthel.datastructures;
 
-public class Solution {
+public class FindPivotIndex {
     public int findMin(int[] nums) {
     	int left =0, mid, n = nums.length,  right = n-1;
     	while(left <right) {

@@ -2,7 +2,7 @@ package com.lperthel.sequences;
 
 import java.util.Arrays;
 
-class Solution {
+class FindPivotIndex {
     public int pivotIndex(int[] nums) {
 int rightSum =Arrays.stream(nums).sum();
 int leftSum = 0;

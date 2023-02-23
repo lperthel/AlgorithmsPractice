@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 
 class FindMinimumInRotatedSortedarrayTest {
-	private Solution searchInRotatedSortedArray = new Solution();
+	private FindPivotIndex searchInRotatedSortedArray = new FindPivotIndex();
 	@Test
 	void testvGivenArrayWithMinInMiddle_ExpectMiddleElement() {
 		final int [] nums = {3,1,2};
