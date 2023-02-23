@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 class FindPivotIndexTest {
-private Solution solution = new Solution();
+private FindPivotIndex solution = new FindPivotIndex();
 	@Test
 	void test() {
 		int[] input = {1,7,3,6,5,6};
