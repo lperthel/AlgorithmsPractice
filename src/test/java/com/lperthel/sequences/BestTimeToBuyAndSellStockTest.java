@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 class BestTimeToBuyAndSellStockTest {
-private Solution solution = new Solution();
+private BestTimeToBuyAndSellStock solution = new BestTimeToBuyAndSellStock();
 	@Test
 	void testGivenLowDayTwoHighDayFive_ExpectPriceDifferences() {
 		int[] input = {7,1,5,3,6,4} ;
