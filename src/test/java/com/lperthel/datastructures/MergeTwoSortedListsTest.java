@@ -1,11 +1,8 @@
 package com.lperthel.datastructures;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import java.util.concurrent.TimeUnit;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Timeout;
 
 class MergeTwoSortedListsTest {
 private MergeTwoLists solution = new MergeTwoLists();
