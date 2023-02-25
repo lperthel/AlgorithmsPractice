@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.jupiter.api.Test;
 
 class LongestPalindromeTest {
-	private Solution solution = new Solution();
+	private LongestPalindrome solution = new LongestPalindrome();
 	@Test
 	void test() {
 		String input = "abccgggccddaa";
