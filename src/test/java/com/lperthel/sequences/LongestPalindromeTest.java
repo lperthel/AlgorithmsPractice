@@ -8,8 +8,8 @@ class LongestPalindromeTest {
 	private Solution solution = new Solution();
 	@Test
 	void test() {
-		String input = "abccgggccdd";
-		int expected =9;
+		String input = "abccgggccddaa";
+		int expected =11;
 		int actual = solution.longestPalindrome(input);
 		assertEquals(expected,actual);
 	}
