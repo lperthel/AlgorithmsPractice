@@ -12,7 +12,7 @@ class NaryTreePreorderTraversalTest {
 
 	private Solution solution = new Solution();
 	@Test
-	void testExample2() {
+	void testExample1() {
 		Node input = Node.generateExample1();
 		List<Integer> list = Arrays.asList(1,3,5,6,2,4);
 String actual = StringUtils.join(	solution.preorder(input), ",");
