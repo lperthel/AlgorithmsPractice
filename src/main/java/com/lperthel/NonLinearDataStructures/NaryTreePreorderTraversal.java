@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
-class Solution {
+class NaryTreePreorderTraversal {
  public List<Integer> preorder(Node root) {
 	 List<Integer> output= new LinkedList<>();
 	 Stack<Node> stack= new Stack<>();

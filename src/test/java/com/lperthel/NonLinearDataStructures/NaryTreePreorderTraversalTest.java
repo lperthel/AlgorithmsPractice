@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 
 class NaryTreePreorderTraversalTest {
 
-	private Solution solution = new Solution();
+	private NaryTreePreorderTraversal solution = new NaryTreePreorderTraversal();
 	@Test
 	void testExample1() {
 		Node input = Node.generateExample1();
