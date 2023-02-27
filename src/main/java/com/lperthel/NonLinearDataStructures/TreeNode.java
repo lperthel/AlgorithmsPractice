@@ -1,6 +1,8 @@
 package com.lperthel.NonLinearDataStructures;
 
- public class TreeNode {
+import lombok.ToString;
+
+public class TreeNode {
      int val;
      TreeNode left;
      TreeNode right;
@@ -24,4 +26,9 @@ package com.lperthel.NonLinearDataStructures;
 	 
 	 return root;
  }
+@Override
+public String toString() {
+	return "TreeNode [val=" + val + "]";
+}
+ 
  }
