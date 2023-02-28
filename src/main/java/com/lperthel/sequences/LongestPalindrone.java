@@ -4,7 +4,7 @@ package com.lperthel.sequences;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Solution {
+public class LongestPalindrone {
 
 	public int longestPalindrome(String s) {
 		Map<Character,Integer> map = new HashMap<>();
