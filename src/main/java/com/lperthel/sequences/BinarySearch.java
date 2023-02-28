@@ -1,14 +1,14 @@
 package com.lperthel.sequences;
 
-class BinarySearch {
+class Solution{
     public int search(int[] nums, int target) {
     	int left = 0, right = nums.length -1, mid;
     	if(nums[left] == target)
     		return left;
     	else if(nums[right] == target)
     		return right;
-    	if(target < nums[0] || target > nums[right])
-    		return -1;   	
+//    	if(target < nums[0] || target > nums[right])
+//    		return -1;   	
     				while(left<=right) {
     		mid = (left + right)/2;
     		if(nums[mid] == target)
