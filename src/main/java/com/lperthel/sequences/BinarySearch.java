@@ -1,6 +1,6 @@
 package com.lperthel.sequences;
 
-class Solution{
+class BinarySearch{
     public int search(int[] nums, int target) {
     	int left = 0, right = nums.length -1, mid;
     	if(nums[left] == target)
