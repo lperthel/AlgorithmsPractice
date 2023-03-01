@@ -64,8 +64,6 @@ node3.left = node6;
 	
 	node5.left = node8;
 	node5.right = node9;
-	
-	
 TreeNode[] nodes = {root, node2,node3,node4,node5,node6,node7,node8,node9};
 return nodes;
  }
