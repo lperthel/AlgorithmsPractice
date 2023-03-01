@@ -1,6 +1,6 @@
 package com.lperthel.sequences;
 
-public class Solution extends VersionControl {
+public class FirstBadVersion extends VersionControl {
 public int firstBadVersion(int n) {
 	int left = 1,right = n;
 	while(left< right) {

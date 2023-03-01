@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.Test;
 
 class FirstBadVersionTest {
-private Solution solution = new Solution();
+private FirstBadVersion solution = new FirstBadVersion();
 	@Test
 	void testExample1() {
 		int n = 5;
