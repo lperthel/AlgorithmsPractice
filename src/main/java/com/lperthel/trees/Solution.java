@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class Solution {
     public boolean isValidBST(TreeNode root) {
-    	Integer newLowerBound, newUpperBound, lowerBound, upperBound;
+    	Integer lowerBound, upperBound;
     	TreeNode node;
     	Stack<TreeNode> nodes = new Stack<>();
     	Stack<Integer> lowerBoundStack= new Stack<>();
@@ -17,21 +17,19 @@ public class Solution {
     		node = nodes.pop();
     		lowerBound = lowerBoundStack.pop();
     		upperBound = upperBoundStack.pop();
-    		if(lowerBound!=null && node.val<lowerBound || upperBound !=null && node.val > upperBound)
-    			isValidTree = false;
-    		if(node.right !=null) {
-    			newLowerBound = lowerBound == null ? node.val : Math.max(lowerBound, node.val);
-    			lowerBoundStack.push(newLowerBound);
+    		if(lowerBound!=null && node.val<=lowerBound || upperBound !=null && node.val >= upperBound)
+    		return false;
+    			if(node.right !=null) {
+    			lowerBoundStack.push(node.val);
     			upperBoundStack.push(upperBound);
     			nodes.push(node.right);
     		}
     		if(node.left!=null) {
-    			newUpperBound = upperBound == null ? node.val : Math.min(upperBound,node.val);
-    			upperBoundStack.push(newUpperBound);
+    			upperBoundStack.push(node.val);
     			lowerBoundStack.push(lowerBound);
     			nodes.push(node.left);
     		}
     	}
-    	return isValidTree;
+    	return true;
     }
     }
