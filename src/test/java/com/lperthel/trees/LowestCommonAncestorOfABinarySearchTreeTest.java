@@ -13,5 +13,12 @@ private Solution solution = new Solution();
 		TreeNode actual = solution.lowestCommonAncestor(nodes[0],nodes[1],nodes[2]);
 		assertEquals(expected,actual);
 	}
+	@Test
+	void testExample2() {
+		TreeNode[] nodes= TreeNode.generateFourLevelBinarySearchTreeArray();
+		TreeNode expected= nodes[1];
+		TreeNode actual = solution.lowestCommonAncestor(nodes[0],nodes[1],nodes[4]);
+		assertEquals(expected,actual);
+	}
 
 }
