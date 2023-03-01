@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 class ValidateBinarySearchTreeTest {
-private Solution solution = new Solution();
+private ValidateBinarySearchTree solution = new ValidateBinarySearchTree();
 	@Test
 	void testExample2() {
 	TreeNode input = ValidateBinarySearchTreeTest.generateValidateBinarySearchTreeExample2();
