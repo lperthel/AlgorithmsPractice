@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 class LowestCommonAncestorOfABinarySearchTreeTest {
-private Solution solution = new Solution();
+private LowestCommonAncestorOfABinarySearchTree solution = new LowestCommonAncestorOfABinarySearchTree();
 	@Test
 	void testExample1() {
 		TreeNode[] nodes= TreeNode.generateFourLevelBinarySearchTreeArray();
