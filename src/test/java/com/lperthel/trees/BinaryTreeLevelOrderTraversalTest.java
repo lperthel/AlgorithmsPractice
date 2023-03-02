@@ -1,4 +1,4 @@
-package com.lperthel.NonLinearDataStructures;
+package com.lperthel.trees;
 
 import static org.junit.Assert.assertEquals;
 

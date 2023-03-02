@@ -2,7 +2,7 @@ package com.lperthel.trees;
 
 import java.util.Stack;
 
-public class Solution {
+public class ValidateBinarySearchTree {
     public boolean isValidBST(TreeNode root) {
     	Integer lowerBound, upperBound;
     	TreeNode node;
