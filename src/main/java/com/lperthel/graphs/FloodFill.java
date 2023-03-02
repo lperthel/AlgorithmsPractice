@@ -2,11 +2,13 @@ package com.lperthel.graphs;
 
 import java.util.function.BiPredicate;
 
-class Solution {
+class FloodFill {
 	private int myColor;
 	private int [][] image;
 	private int newColor;
     public int[][] floodFill(int[][] image, int sr, int sc, int color) {
+    	if(image[sr][sc] == color)
+    		return image;
         this.image = image;
         myColor = image[sr][sc];
         newColor = color;
@@ -22,7 +24,7 @@ BiPredicate<Integer,Integer> isMyColor = (Integer r,Integer c)-> image[r][c] == 
 				fill(row,col+1);
 			if(row+1<image.length && col<image[row+1].length && isMyColor.test(row+1,col))
 				fill(row+1,col);
-			if(col-1<=0 && isMyColor.test(row,col-1))
+			if(col-1>=0 && isMyColor.test(row,col-1))
 				fill(row,col-1);
 		}
 	}
