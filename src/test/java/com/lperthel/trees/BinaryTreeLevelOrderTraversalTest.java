@@ -8,9 +8,6 @@ import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Test;
 
-import com.lperthel.trees.BinaryTreeLevelOrderTraversal;
-import com.lperthel.trees.TreeNode;
-
 class BinaryTreeLevelOrderTraversalTest {
 private BinaryTreeLevelOrderTraversal solution = new BinaryTreeLevelOrderTraversal();
 	@Test

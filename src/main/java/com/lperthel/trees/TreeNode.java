@@ -1,7 +1,5 @@
 package com.lperthel.trees;
 
-import lombok.ToString;
-
 public class TreeNode {
      int val;
      public TreeNode left;
