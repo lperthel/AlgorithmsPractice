@@ -4,16 +4,15 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class NumberOfIslandsTest {
-private NumberOfIslandsDFS solution = new NumberOfIslandsDFS();
+class NumberOfIslandsUnionFindTest {
+private NumberOfIslandsUnionFind solution = new NumberOfIslandsUnionFind();
 	@Test
 	void testExample2() {
 		char[][] grid = {{'1','1','0','0','0'},
-			{'1','1','0','0','0','1'},
-				{'0','0','1','0'},
-					{'0','0','0','1','1'},
-						{'0','0','0','0','0'}};
-					int expected = 4;
+			{'1','1','0','0','0'},
+				{'0','0','1','0','0'},
+					{'0','0','0','1','1'}};
+					int expected = 3;
 					int actual = solution.numIslands(grid);
 					assertEquals(expected,actual);
 				}

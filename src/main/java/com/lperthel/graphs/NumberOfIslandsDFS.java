@@ -2,7 +2,7 @@ package com.lperthel.graphs;
 
 import java.util.function.BiPredicate;
 
-class Solution {
+class NumberOfIslandsDFS {
 	private int currentIsland = 0;
 	private char[][] grid;
 	public int numIslands(char[][] grid) {
