@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 class UniquePathsTest {
-	private Solution solution= new Solution();
+	private UniquePaths solution= new UniquePaths();
 	@Test
 	void test_Example1() {
 		int m = 3;
