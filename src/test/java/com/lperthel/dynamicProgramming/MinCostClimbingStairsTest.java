@@ -16,7 +16,7 @@ class MinCostClimbingStairsTest {
 	@Test
 	void test_Example2() {
 		int[] cost = {1,100,1,1,1,100,1,1,100,1};
-		int expected = 16;
+		int expected = 6;
 		int actual = solution.minCostClimbingStairs(cost);
 		assertEquals(expected,actual);
 	}
