@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 class ClimbingStairsTest {
-	private Solution solution= new Solution();
+	private ClimbingStairs solution= new ClimbingStairs();
 	@Test
 	void test_Given5Stairs_Expect8Ways() {
 		int n = 5;
