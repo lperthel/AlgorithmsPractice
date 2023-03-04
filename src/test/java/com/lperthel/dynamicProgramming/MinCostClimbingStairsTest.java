@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 class MinCostClimbingStairsTest {
-	private Solution solution= new Solution();
+	private MinCostClimbingStairs solution= new MinCostClimbingStairs();
 	@Test
 	void test_Example1() {
 		int[] cost = {10,15,20};
