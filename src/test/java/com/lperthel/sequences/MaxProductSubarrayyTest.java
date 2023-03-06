@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
+import com.lperthel.slidingwindow.MaxProductSubarray;
+
 public class MaxProductSubarrayyTest {
 
 	private MaxProductSubarray  maxProductSubArray  = new MaxProductSubarray ();

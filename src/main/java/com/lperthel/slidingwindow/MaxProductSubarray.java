@@ -1,4 +1,4 @@
-package com.lperthel.sequences;
+package com.lperthel.slidingwindow;
 
 
 public final class MaxProductSubarray {

@@ -2,7 +2,7 @@ package com.lperthel.dynamicProgramming;
 
 import java.util.Arrays;
 
-public class Solution {
+public class UniquePathsSolution {
 	public int uniquePaths(int m, int n) {
 	int[] previousCost = new int[n];
 	int[] cost = new int[n];
