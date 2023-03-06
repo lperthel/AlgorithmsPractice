@@ -8,7 +8,7 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 class FindAllAnagramsInAStringTest {
-private Solution solution = new Solution();
+private FindAllAnagramsInAString solution = new FindAllAnagramsInAString();
 	@Test
 	void testExample1() {
 		String s = "cbaebabacd", p = "abc";;
