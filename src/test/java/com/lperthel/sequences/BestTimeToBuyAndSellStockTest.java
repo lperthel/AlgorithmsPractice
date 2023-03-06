@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import com.lperthel.dynamicProgramming.BestTimeToBuyAndSellStock;
+
 class BestTimeToBuyAndSellStockTest {
 private BestTimeToBuyAndSellStock solution = new BestTimeToBuyAndSellStock();
 	@Test

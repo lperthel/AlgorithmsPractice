@@ -1,4 +1,4 @@
-package com.lperthel.sequences;
+package com.lperthel.dynamicProgramming;
 
 public class BestTimeToBuyAndSellStock {
     public int maxProfit(int[] prices) {
